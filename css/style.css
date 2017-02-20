@@ -1,0 +1,38 @@
+/* reset */
+
+.chat-left-side {
+    height: 650px;
+    width: 35%;
+    float: left;
+    background-color: #ac45fd;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.chat-users-panel {
+    padding-left: 0;
+    list-style: none;
+}
+
+.chat-user-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.chat-user-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url(../img/photo.png);
+    background-position-x: -10px;
+}
+
+.chat-user-status p {
+    text-overflow: ellipsis;
+}
+
+.chat-right-side {
+    height: 650px;
+    width: 65%;
+    float: left;
+}
