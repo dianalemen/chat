@@ -2,7 +2,7 @@
 
 .chat-left-side {
     height: 650px;
-    width: 35%;
+    width: 500px;
     float: left;
     background-color: #ac45fd;
     overflow-x: hidden;
@@ -12,6 +12,10 @@
 .chat-users-panel {
     padding-left: 0;
     list-style: none;
+}
+
+.chat-users-panel:nth-child(3) {
+    border-top: solid 10px #fff;
 }
 
 .chat-user-content {
@@ -29,10 +33,12 @@
 
 .chat-user-status p {
     text-overflow: ellipsis;
+    color: #fff;
 }
 
 .chat-last-seen p {
     width: 40px;
+    margin-top: 30px;
     border-radius: 10px;
     text-align: center;
     background-color: #744d92;
@@ -41,6 +47,14 @@
 
 .chat-right-side {
     height: 650px;
-    width: 65%;
+    width: 833px;
     float: left;
+}
+
+.chat-massege {
+    display: flex;
+}
+
+.chat-massege:nth-child(even) {
+    justify-content: flex-end;
 }
