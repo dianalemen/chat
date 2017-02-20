@@ -23,6 +23,14 @@
     justify-content: space-around;
 }
 
+.chat-user-content:hover {
+    background-color: #bd73f7;
+}
+
+.chat-user-content:nth-child(2) {
+    border-top: solid 1px #fff;
+}
+
 .chat-user-image {
     width: 80px;
     height: 80px;
@@ -57,4 +65,8 @@
 
 .chat-massege:nth-child(even) {
     justify-content: flex-end;
+}
+
+.chat-massege:nth-child(even) .chat-msg-content {
+    order: -1;
 }
