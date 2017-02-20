@@ -31,6 +31,14 @@
     text-overflow: ellipsis;
 }
 
+.chat-last-seen p {
+    width: 40px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #744d92;
+    color: #fff;
+}
+
 .chat-right-side {
     height: 650px;
     width: 65%;
