@@ -1,0 +1,23 @@
+.chat-login-form {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.chat-register-form {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+#login:checked~.chat-login-form {
+    max-height: 100px;
+    overflow: visible;
+    opacity: 1;
+}
+
+#register:checked~.chat-register-form {
+    max-height: 100px;
+    overflow: visible;
+    opacity: 1;
+}
