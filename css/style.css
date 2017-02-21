@@ -70,3 +70,14 @@
 .chat-massege:nth-child(even) .chat-msg-content {
     order: -1;
 }
+
+.chat-msg-content {
+    width: 45%;
+    background-color: #ac45fd;
+    border-radius: 4%;
+}
+
+.chat-enter-msg textarea {
+    border-radius: 15px;
+    outline: none;
+}
