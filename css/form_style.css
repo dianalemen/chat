@@ -10,14 +10,32 @@
     opacity: 0;
 }
 
-#login:checked~.chat-login-form {
+#login:checked+lable~.chat-login-form {
     max-height: 100px;
     overflow: visible;
     opacity: 1;
 }
 
-#register:checked~.chat-register-form {
+#register:checked+lable~.chat-register-form {
     max-height: 100px;
     overflow: visible;
     opacity: 1;
+}
+
+button {
+    border-radius: 15px;
+    outline: none;
+}
+
+input {
+    border-radius: 15px;
+    outline: none;
+}
+
+form input {
+    display: block;
+}
+
+input[type="radio"] {
+    display: none;
 }
