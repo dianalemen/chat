@@ -106,8 +106,8 @@ input[type="button"] {
     background-color: #bd73f7;
 }
 
-.chat-user-content:nth-child(2) {
-    border-top: solid 1px #fff;
+.chat-user-content:first-child:hover {
+    background-color: #ac45fd;
 }
 
 .chat-user-image {
