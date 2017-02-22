@@ -6,7 +6,7 @@ body {
 
 .chat-left-side {
     height: 650px;
-    width: 500px;
+    width: 38%;
     float: left;
     background-color: #ac45fd;
     overflow-x: hidden;
@@ -25,6 +25,30 @@ body {
 .chat-user-content {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.chat-left-button {
+    width: 80px;
+}
+
+.chat-left-button button {
+    cursor: pointer;
+    height: 29px;
+    padding-left: 0;
+    position: relative;
+    width: 100%;
+}
+
+.chat-btn-arrow {
+    border-bottom: 1px solid #eef4f5;
+    border-left: 1px solid #eef4f5;
+    height: 20px;
+    left: 9px;
+    position: absolute;
+    top: 5px;
+    transform: rotate(45deg);
+    width: 20px;
 }
 
 .chat-user-content:hover {
@@ -43,13 +67,18 @@ body {
     background-position-x: -10px;
 }
 
+.chat-user-status {
+    width: 58%;
+}
+
 .chat-user-status p {
     text-overflow: ellipsis;
     color: #fff;
 }
 
-ul {
+.chat-right-side ul {
     margin-top: 0;
+    padding-left: 14px;
 }
 
 .chat-last-seen p {
@@ -66,7 +95,7 @@ ul {
     height: 650px;
     overflow-x: hidden;
     overflow-y: scroll;
-    width: 833px;
+    width: 62%;
 }
 
 .chat-massege {
