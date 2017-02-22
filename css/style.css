@@ -51,6 +51,26 @@ body {
     width: 20px;
 }
 
+.chat-burger-menu {
+    height: 35px;
+    width: 12%;
+}
+
+.chat-burger-menu button {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+
+.chat-burger-menu .bur {
+    background-color: #fff;
+    border-radius: 30px;
+    height: 3px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    width: 30px;
+}
+
 .chat-user-content:hover {
     background-color: #bd73f7;
 }
