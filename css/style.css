@@ -29,18 +29,17 @@ body {
 }
 
 .chat-left-button {
-    width: 80px;
-}
-
-.chat-left-button button {
     cursor: pointer;
     height: 29px;
     padding-left: 0;
     position: relative;
-    width: 100%;
+    width: 80px;
 }
 
 .chat-btn-arrow {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border-bottom: 1px solid #eef4f5;
     border-left: 1px solid #eef4f5;
     height: 20px;
@@ -49,6 +48,16 @@ body {
     top: 5px;
     transform: rotate(45deg);
     width: 20px;
+    outline: none;
+}
+
+.chat-btn-arrow:checked,
+.chat-btn-arrow:focus {
+    outline: none;
+}
+
+.chat-user-content+.chat-btn-arrow:checked~.chat-user-content {
+    display: none;
 }
 
 .chat-burger-menu {
