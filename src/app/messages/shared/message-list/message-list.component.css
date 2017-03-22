@@ -1,0 +1,57 @@
+.chat-content__massege {
+    display: flex;
+}
+
+.chat-content__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.chat-content__massege:nth-child(odd) {
+    justify-content: flex-end;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.chat-content__info button {
+    height: 30px;
+    width: 30px;
+}
+
+.chat-content__massege:nth-child(odd) .chat-content__container {
+    order: -1;
+}
+
+.chat-content__massege:nth-child(even) .chat-content__container .chat-content__time {
+    padding-left: 90%;
+}
+
+.chat-content__container {
+    max-width: 60%;
+}
+
+.chat-content__time p {
+    color: #eef4f5;
+}
+
+.chat-content__massege:nth-child(odd) .chat-content__container .chat-content__text {
+    background-color: #eef4f5;
+}
+
+.chat-content__text {
+    align-content: flex-start;
+    background-color: #a58adc;
+    border-radius: 10px;
+    padding: 1px 1px 1px 1px;
+}
+
+.chat-content__text p {
+    margin-left: 5px;
+    margin-right: 5px;
+}

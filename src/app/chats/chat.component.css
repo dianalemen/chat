@@ -1,0 +1,17 @@
+.chats-page {
+    border-top: solid 1px white;
+    display: flex;
+    width: 100%;
+}
+
+h1 {
+    margin: 0;
+}
+
+ct-chat-list {
+    width: 450px;
+}
+
+ct-chat-detail {
+    width: 700px;
+}

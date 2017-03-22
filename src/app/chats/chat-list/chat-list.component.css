@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+}
+
+ul {
+    padding-left: 0;
+}
+
+.chat-left-side {
+    height: 650px;
+    width: 100%;
+    float: left;
+    background-color: #ac45fd;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.chat-users-panel {
+    padding-left: 0;
+    list-style: none;
+}
+
+.chat-users-panel:nth-child(3) {
+    border-top: solid 10px #fff;
+}
+
+.user-content,
+.left-nav {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+li {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.left-nav__button {
+    cursor: pointer;
+    height: 29px;
+    padding-left: 0;
+    position: relative;
+    width: 49px;
+}
+
+.left-nav__input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-bottom: 1px solid #eef4f5;
+    border-left: 1px solid #eef4f5;
+    height: 20px;
+    left: 9px;
+    position: absolute;
+    top: 5px;
+    transform: rotate(45deg);
+    width: 20px;
+    outline: none;
+}
+
+.left-nav__input:checked,
+.left-nav__input:focus {
+    outline: none;
+}
+
+.left-nav__input:checked .user-content {
+    visibility: hidden;
+}
+
+.left-nav__menu {
+    height: 35px;
+    margin-left: 2%;
+    width: 12%;
+}
+
+.left-nav__menu button {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+
+.left-nav__menu .burger {
+    background-color: #fff;
+    border-radius: 30px;
+    height: 3px;
+    margin-bottom: 5px;
+    margin-left: 47%;
+    width: 30px;
+}
+
+input[type="search"] {
+    background-color: #eef4f5;
+    border: none;
+    border-bottom-left-radius: 16px;
+    border-top-left-radius: 16px;
+    float: left;
+    height: 31px;
+    outline: none;
+    padding: 5px;
+}
+
+.left-nav__serch {
+    min-width: 208px;
+}
+
+input[type="button"] {
+    background-color: #eef4f5;
+    background-image: url(../img/search.png);
+    background-position: -1px 2px;
+    ;
+    background-repeat: no-repeat;
+    border: none;
+    border-bottom-right-radius: 16px;
+    border-top-right-radius: 16px;
+    float: left;
+    height: 31px;
+    outline: none;
+    padding: 5px;
+    width: 28px;
+}
+
+.user-content:hover {
+    background-color: #bd73f7;
+}
+
+.user-content__image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url(../img/photo.png);
+    background-position-x: -10px;
+}
+
+.user-content__status {
+    width: 58%;
+}
+
+.user-content__status p {
+    text-overflow: ellipsis;
+    color: #fff;
+}
+
+.user-content__time p {
+    width: 40px;
+    margin-top: 30px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #744d92;
+    color: #fff;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
