@@ -22,7 +22,7 @@
     </ul>
     <ul>
 
-        <li class="user-content" *ngFor='let chat of chats | async' (click)="select({id: chat.id})">
+        <li class="user-content" *ngFor='let chat of chats | async' (click)="select({id: chat.id})" change-color>
             <div class="user-content__image ">
             </div>
             <div class="user-content__status ">
@@ -30,7 +30,7 @@
                 <p>{{chat.status}}</p>
             </div>
             <div class="user-content__time ">
-                <p class="time ">2m</p>
+                <p class="time ">{{ value | time }} h </p>
             </div>
         </li>
 

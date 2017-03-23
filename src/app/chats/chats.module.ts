@@ -8,6 +8,8 @@ import { ChatHolderComponent } from './chat-holder';
 import { ChatsRoutingModule } from './chat-routing.module';
 import { MessagesSharedModule } from '../messages';
 import { ChatService } from './shared/chat.service';
+import { TimePipe } from '../shared/time';
+import { ChangeColorDerective } from './../shared/change-color.derective';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ChatService } from './shared/chat.service';
     ChatListComponent,
     ChatDetailComponent,
     ChatNewComponent,
-    ChatHolderComponent
+    ChatHolderComponent,
+    TimePipe,
+    ChangeColorDerective
   ],
   imports: [
     SharedModule,

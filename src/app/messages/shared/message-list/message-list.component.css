@@ -28,9 +28,7 @@ button {
     order: -1;
 }
 
-.chat-content__massege:nth-child(even) .chat-content__container .chat-content__time {
-    padding-left: 90%;
-}
+.chat-content__massege:nth-child(even) .chat-content__container .chat-content__time {}
 
 .chat-content__container {
     max-width: 60%;

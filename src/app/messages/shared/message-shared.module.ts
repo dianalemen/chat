@@ -2,11 +2,14 @@ import { NgModule } from '@angular/core';
 import { SharedModule }  from '../../shared';
 import { MessageListComponent } from './message-list';
 import { MessageNewComponent } from './message-new';
-import { MessageService } from './message.service' 
+import { MessageService } from './message.service';
+import { HightLightDerective } from '../../shared/highlight.directive';
+
 @NgModule({
   declarations: [
     MessageListComponent,
-    MessageNewComponent
+    MessageNewComponent,
+    HightLightDerective
   ],
   imports: [
     SharedModule

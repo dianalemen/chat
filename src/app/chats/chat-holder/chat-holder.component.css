@@ -1,0 +1,7 @@
+.chat-holder {
+    display: flex;
+}
+
+.chat-holder h1 {
+    margin: auto;
+}

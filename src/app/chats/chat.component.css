@@ -9,9 +9,9 @@ h1 {
 }
 
 ct-chat-list {
-    width: 450px;
+    width: 30%;
 }
 
 ct-chat-detail {
-    width: 700px;
+    flex-grow: 2;
 }
