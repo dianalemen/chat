@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Chat } from '../shared/chat.model';
 import { ChatService } from '../shared/chat.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -11,24 +12,39 @@ import { ChatService } from '../shared/chat.service';
  
 })
 
-export class ChatListComponent implements OnInit {
+export class ChatListComponent implements OnInit, OnDestroy {
+  private searchValue: string ="";
+  private subscription: Subscription;
 
  @Input() chats: Promise<Chat[]>;
 
   constructor(
-    private router: Router) {
+    private router: Router,
+    private service: ChatService
+    ) {
 
   }
 
-  ngOnInit() {
-
-  }
-
+ 
   select(chat: Chat) {
   
 
     // Navigate with relative link
     this.router.navigate(['chat', chat.id])
   }
+
+   public ngOnInit(): void{
+      
+      this.subscription = this.service.getSearchValue().subscribe (value => this.searchValue = value);
+     }
+
+  public ngOnDestroy(): void{
+    this.subscription.unsubscribe();
+  }
+
+  private onSearchValueChange(value: string): void{
+      this.service.setSearchValue(value);
+  }
+
 
 }

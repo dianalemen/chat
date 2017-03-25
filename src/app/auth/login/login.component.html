@@ -1,8 +1,17 @@
-<form novalidate #f="ngForm" (ngSubmit)="onSubmit(f.value)">
-    <input type="email" placeholder="Your email" name="email" required ngModel>
-    <div *ngIf="f.controls.email?.required">пусто</div>
-    <input type="password" placeholder="Your password" name="password" required ngModel>
-    <div *ngIf="f.controls.password?.required">пусто</div>
+<script src="https://apis.google.com/js/platform.js" async defer>
+</script>
 
-    <button [disabled]="f.invalid">Login</button>
-</form>
+<body>
+
+    <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+        <input type="email" placeholder="Your email" name="email" required ngModel>
+        <div *ngIf="f.controls.email?.required">пусто</div>
+        <input type="password" placeholder="Your password" name="password" required ngModel>
+        <div *ngIf="f.controls.password?.required">пусто</div>
+
+        <button [disabled]="f.invalid">Login</button>
+    </form>
+    <button id="google-login-btn">
+Login with Google
+</button>
+</body>

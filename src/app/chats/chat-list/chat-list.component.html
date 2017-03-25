@@ -3,7 +3,7 @@
     <ul class="chat-users-panel">
         <li class="left-nav">
             <div class="left-nav__button">
-                <input type="checkbox" class="left-nav__input" onclick="myFunction()">
+                <input type="checkbox" class="left-nav__input" onclick="myFunction()" name="serch" [ngModel]="searchValue" (ngModelChange)="onSearchValueChange($event)">
             </div>
             <div class="left-nav__serch">
                 <form>
@@ -22,7 +22,7 @@
     </ul>
     <ul>
 
-        <li class="user-content" *ngFor='let chat of chats | async' (click)="select({id: chat.id})" change-color>
+        <li class="user-content" *ngFor='let chat of chats | async | chatPipe:searchValue' (click)="select({id: chat.id})" change-color>
             <div class="user-content__image ">
             </div>
             <div class="user-content__status ">

@@ -4,6 +4,8 @@ import { AuthService } from '../../core/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
+
+
 @Component({
   selector: 'ct-login',
   templateUrl: './login.component.html',
@@ -21,8 +23,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    
+   
   }
+
   onSubmit(formData){
     this.authService.login(formData)
     console.log(formData)
