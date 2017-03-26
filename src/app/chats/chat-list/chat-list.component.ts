@@ -2,7 +2,7 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Chat } from '../shared/chat.model';
 import { ChatService } from '../shared/chat.service';
-import { Subscription } from 'rxjs';
+import { BehaviorSubject, Subscription } from "rxjs/Rx";
 
 
 @Component({
@@ -21,9 +21,7 @@ export class ChatListComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private service: ChatService
-    ) {
-
-  }
+    ) {}
 
  
   select(chat: Chat) {
@@ -33,12 +31,14 @@ export class ChatListComponent implements OnInit, OnDestroy {
     this.router.navigate(['chat', chat.id])
   }
 
-   public ngOnInit(): void{
+  ngOnInit(){
       
-      this.subscription = this.service.getSearchValue().subscribe (value => this.searchValue = value);
+      this.subscription = this.service
+      .getSearchValue()
+      .subscribe(value => this.searchValue = value);
      }
 
-  public ngOnDestroy(): void{
+  public ngOnDestroy(){
     this.subscription.unsubscribe();
   }
 

@@ -10,7 +10,7 @@ import { MessagesSharedModule } from '../messages';
 import { ChatService } from './shared/chat.service';
 import { TimePipe } from '../shared/time';
 import { ChangeColorDerective } from './../shared/change-color.derective';
-import { chatPipe} from '../shared/chatPipe';
+import { ChatPipeFilter} from './chatPipe.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { chatPipe} from '../shared/chatPipe';
     ChatHolderComponent,
     TimePipe,
     ChangeColorDerective,
-    chatPipe
+    ChatPipeFilter
   ],
   imports: [
     SharedModule,
