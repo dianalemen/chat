@@ -13,6 +13,7 @@ declare var gapi: any;
 export class LoginComponent implements OnInit {
   profile;
   username;
+  email;
 
 
   constructor(private authService: AuthService,
@@ -44,7 +45,8 @@ export class LoginComponent implements OnInit {
   onSuccess (user): void {
     this.zone.run(() => {
       this.profile = user.getBasicProfile();
-      this.username = user.getBasicProfile().getEmail();
+      this.username = user.getBasicProfile().getName();
+      this.email = user.getBasicProfile().getEmail();
     });
   }
 }
