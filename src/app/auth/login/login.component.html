@@ -1,14 +1,10 @@
 <section>
-    <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)" class="content">
+    <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f.value)" class="content">
         <div>
-
             <input type="email" placeholder="Your email" name="email" required [ngModel]="email">
-            <div *ngIf="f.controls.email?.touched" class="error">Email is required</div>
         </div>
         <div>
-
             <input type="password" placeholder="Your password" name="password" required [ngModel]="password">
-            <div *ngIf="f.controls.password?.touched" class="error">Password is required</div>
         </div>
         <div>
             <button [disabled]="f.invalid">Login</button>
@@ -20,4 +16,5 @@
     </form>
 
     <div *ngIf="profile">You are {{username}}<br>Your email is {{email}}</div>
+
 </section>

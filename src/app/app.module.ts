@@ -8,6 +8,7 @@ import { HomeComponent } from './app-home.component';
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './not-found.component';
+import { UserService } from './shared/user.servise'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { PageNotFoundComponent } from './not-found.component';
     CoreModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [
     AppComponent
   ]

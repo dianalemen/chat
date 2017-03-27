@@ -1,26 +1,21 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import { API_CONFIG} from '../shared/api.config';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class AuthService{
+    constructor (private http: Http){}
 
-    get isLoggedIn(){
-        return localStorage.getItem('token')
-    }
-
-    login(user){
-        if(user){
-            localStorage.setItem('token', 'youlogged')
-            console.log('ffffffffffffffff');
-        }
+    public login(user): Observable<any>{
+       return this.http.post(API_CONFIG.LOGIN, user).map(res => res.json())
 
     }
-
-    register(user){
-//todo
+    public isLoggedIn(): boolean{
+        return false;
     }
 
-    logOut(){
-        localStorage.setItem('token', null)
+    public logout(): void{
+        console.log('user logout');
     }
-
 }

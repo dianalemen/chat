@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../shared/user.servise';
+import { Router } from '@angular/router';
+
 
 @Component({
     selector: 'ct-nav',
@@ -7,8 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class NavComponent implements OnInit{
-    constructor(){}
+    private username: string ="";
+    constructor(private userService: UserService,
+    private router: Router
+    ){}
 
-    ngOnInit(){}
+    ngOnInit(){
+        this.userService
+        .getUserState()
+        .subscribe(state => this.username = state.username)
+    }
+private isLogedIn(): boolean{
+    return this.userService.authenticated;
+}
+    onLoOut(){
+        this.userService.logout();
+        this.router.navigate(['auth/login'])
+    }
     
 }
