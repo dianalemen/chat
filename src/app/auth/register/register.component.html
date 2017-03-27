@@ -1,34 +1,36 @@
-<form novalidate [formGroup]="user" (ngSubmit)="onSubmit(user)" class="content">
-    <div>
-        <label for="name">Ім'я</label>
-        <input type="text" formControlName="name" placeholder="Введіть Ваше ім'я">
-        <div *ngIf="user.get('name').hasError('required') && user.get('name').touched">
-            Name is required
-        </div>
-    </div>
-    <div>
-        <label for="email">Email</label>
-        <input type="email" formControlName="email" placeholder="Введіть email">
-        <div *ngIf="user.get('email').hasError('required') && user.get('email').touched">
-            Email is required
-        </div>
-    </div>
-    <div formGroupName="passwords">
+<section>
+    <form novalidate [formGroup]="user" (ngSubmit)="onSubmit(user)" class="content">
         <div>
-            <label for="password">Пароль</label>
-            <input type="password" formControlName="password" placeholder="Придумайте пароль">
-            <div *ngIf="user.controls.passwords.controls.password.hasError('required') && user.controls.passwords.controls.password.touched">
-                Password is required
+            <label for="name">Ім'я</label>
+            <input type="text" formControlName="name" placeholder="Введіть Ваше ім'я">
+            <div *ngIf="user.get('name').hasError('required') && user.get('name').touched" class="error">
+                Name is required
             </div>
         </div>
         <div>
-            <label for="password2">Ще раз пароль</label>
-            <input type="password" formControlName="confirmPassword" placeholder="Підтвердіть пароль">
-            <div *ngIf="user.controls.passwords.controls.confirmPassword.hasError('required') && user.controls.passwords.controls.confirmPassword.touched">
-                Confirm Password is required
+            <label for="email">Email</label>
+            <input type="email" formControlName="email" placeholder="Введіть email">
+            <div *ngIf="user.get('email').hasError('required') && user.get('email').touched" class="error">
+                Email is required
             </div>
         </div>
-    </div>
-    <button type="submit" [disabled]="user.invalid">Зареєструватися</button>
-    <!-- end wrap in div -->
-</form>
+        <div formGroupName="passwords">
+            <div>
+                <label for="password">Пароль</label>
+                <input type="password" formControlName="password" placeholder="Придумайте пароль">
+                <div *ngIf="user.controls.passwords.controls.password.hasError('required') && user.controls.passwords.controls.password.touched" class="error">
+                    Password is required
+                </div>
+            </div>
+            <div>
+                <label for="password2">Ще раз пароль</label>
+                <input type="password" formControlName="confirmPassword" placeholder="Підтвердіть пароль">
+                <div *ngIf="user.controls.passwords.controls.confirmPassword.hasError('required') && user.controls.passwords.controls.confirmPassword.touched" class="error">
+                    Confirm Password is required
+                </div>
+            </div>
+        </div>
+        <button type="submit" [disabled]="user.invalid">Зареєструватися</button>
+        <!-- end wrap in div -->
+    </form>
+</section>
