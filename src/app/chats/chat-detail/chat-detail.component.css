@@ -1,13 +1,10 @@
 .chat-detail {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 100%;
 }
 
 ul {
     margin-top: 0;
-}
-
-ct-chat-detail {
-    flex-flow: 2;
 }

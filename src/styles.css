@@ -11,3 +11,21 @@ body {
     text-align: center;
     width: 18.5%;
 }
+
+#serchInput {
+    background-color: #eef4f5;
+    border: none;
+    border-bottom-left-radius: 16px;
+    border-top-left-radius: 16px;
+    float: left;
+    height: 31px;
+    outline: none;
+    padding: 5px;
+    min-width: 208px;
+}
+
+ct-chat-detail,
+ct-chat-holder {
+    display: flex;
+    width: 70%;
+}

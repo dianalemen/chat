@@ -6,7 +6,7 @@
                 <input type="checkbox" class="left-nav__input" onclick="myFunction()">
             </div>
             <form>
-                <input type="search" name="serch" [(ngModel)]="searchValue" (ngModelChange)="onSearchValueChange($event)">
+                <input type="search" name="serch" [(ngModel)]="searchValue" (ngModelChange)="onSearchValueChange($event)" id="searchInput">
                 <input type="button">
             </form>
             <div class="left-nav__menu">

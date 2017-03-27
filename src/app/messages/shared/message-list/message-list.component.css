@@ -53,3 +53,19 @@ button {
     margin-left: 5px;
     margin-right: 5px;
 }
+
+input[type="button"] {
+    background-color: #eef4f5;
+    background-image: url(../img/search.png);
+    background-position: -1px 2px;
+    ;
+    background-repeat: no-repeat;
+    border: none;
+    border-bottom-right-radius: 16px;
+    border-top-right-radius: 16px;
+    float: left;
+    height: 31px;
+    outline: none;
+    padding: 5px;
+    width: 28px;
+}
