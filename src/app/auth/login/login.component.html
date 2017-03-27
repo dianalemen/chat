@@ -1,15 +1,13 @@
-<body>
-
-    <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f.value)">
-        <input type="email" placeholder="Your email" name="email" required ngModel>
-        <div *ngIf="f.controls.email?.required">пусто</div>
-        <input type="password" placeholder="Your password" name="password" required ngModel>
-        <div *ngIf="f.controls.password?.required">пусто</div>
+<section>
+    <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <input type="email" placeholder="Your email" name="email" required [ngModel]="email">
+        <div *ngIf="f.controls.email?.touched" class="error">Email is required</div>
+        <input type="password" placeholder="Your password" name="password" required [ngModel]="password">
+        <div *ngIf="f.controls.password?.touched" class="error">Password is required</div>
 
         <button [disabled]="f.invalid">Login</button>
+        <button id="google-login-btn">Login with Google</button>
     </form>
-    <button id="google-login-btn">
-Login with Google
-</button>
+
     <div *ngIf="profile">You are {{username}}<br>Your email is {{email}}</div>
-</body>
+</section>
