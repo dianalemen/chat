@@ -13,17 +13,17 @@ export class UserService{
     
     public setUserState(state): void{
         this._state.next(state);
-}
+    }
 
     public getUserState(): BehaviorSubject<any>{
         return this._state;
-}
-public get authenticated(): boolean{
+    }
+    public get authenticated(): boolean{
     return this._authenticated;
-}
+    }
 
-constructor (private http: Http,
-private auth: AuthService){}
+    constructor (private http: Http,
+    private auth: AuthService){}
 
     public login(user): Observable<any>{
        return this.http.post(API_CONFIG.LOGIN, user).map(res => res.json())

@@ -13,14 +13,17 @@ import { BehaviorSubject, Subscription } from "rxjs/Rx";
 })
 
 export class ChatListComponent implements OnInit, OnDestroy {
+
   private searchValue: string ="";
   private subscription: Subscription;
 
  @Input() chats: Promise<Chat[]>;
 
   constructor(
+
     private router: Router,
     private service: ChatService
+    
     ) {}
 
  
