@@ -3,6 +3,8 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 import { MessageService } from '../message.service';
 import { Message } from '../message.model';
 import { Subscription } from 'rxjs';
+import { MessageSocketService } from '../message-soket.service';
+import * as io from 'socket.io-client';
 
 
 @Component({
@@ -13,6 +15,8 @@ import { Subscription } from 'rxjs';
 
 export class MessageListComponent implements OnInit, OnDestroy {
   chatId: number;
+  socket;
+
   private searchValue: string ="";
   private subscription: Subscription;
 
@@ -21,6 +25,7 @@ export class MessageListComponent implements OnInit, OnDestroy {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private messageService: MessageService,
+            
               ) {}
 
   ngOnInit() {
@@ -41,4 +46,19 @@ export class MessageListComponent implements OnInit, OnDestroy {
   private onSearchValueChange(value: string): void{
       this.messageService.setSearchValue(value);
   }
+
+onMessages(){ 
+  this.socket = io.connect('ws://front-camp-chat.herokuapp.com/socket.io/');
+    this.socket.on('connect', () => {
+    console.log('connected')
+  });
+
+  this.socket.on('message', (msg) => {
+    console.log('message', msg);
+  })
+}
+
+joinGroup(){
+    this.socket.emit('message', 'jkfdlkfjsdkljf');
+}
 }

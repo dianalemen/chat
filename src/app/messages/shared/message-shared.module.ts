@@ -5,6 +5,7 @@ import { MessageNewComponent } from './message-new';
 import { MessageService } from './message.service';
 import { HightLightDerective } from '../../shared/highlight.directive';
 import { MessagePipeFilter } from './message-filter.pipe';
+import { MessageSocketService } from './message-soket.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,10 @@ import { MessagePipeFilter } from './message-filter.pipe';
     MessageListComponent,
     MessageNewComponent,
   ],
-  providers: [MessageService]
+  providers: [
+  MessageService,
+  MessageSocketService
+  ]
 })
 
 export class MessagesSharedModule {}
