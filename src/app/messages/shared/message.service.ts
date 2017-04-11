@@ -7,7 +7,7 @@ export class MessageService{
    private search$: BehaviorSubject<string> = new BehaviorSubject('');
 
     getAll(chatId){
-      const messages = MESSAGES.filter(message => message.chatId ===chatId);
+      const messages = MESSAGES.filter(message => message.chatId === chatId);
              return Promise.resolve(messages);
     }
 
