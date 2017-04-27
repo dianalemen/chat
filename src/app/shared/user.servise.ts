@@ -13,6 +13,8 @@ export class UserService{
     
     public setUserState(state): void{
         this._state.next(state);
+        localStorage.setItem('token', state.token);
+        //console.log(localStorage['token']);
     }
 
     public getUserState(): BehaviorSubject<any>{

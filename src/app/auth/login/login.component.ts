@@ -75,7 +75,7 @@ form.password
 
 
   private onLoginSuccess(res: any): void{
-    console.log(res);
+    console.log(res); //token
     this.userService.setUserState(res);
     this.router.navigate(['chat'])
   }
