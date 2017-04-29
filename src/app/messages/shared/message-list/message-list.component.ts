@@ -18,11 +18,9 @@ export class MessageListComponent implements OnInit, OnDestroy {
   chatId: number;
   socket;
   heroes;
-
+  messages;
   private searchValue: string ="";
   private subscription: Subscription;
-
-  messages: Promise <Message[]>;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -37,17 +35,12 @@ export class MessageListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
   this.messageService.getHeroes().subscribe(
-                     heroes => {this.heroes = heroes; console.log(heroes)},
+                     heroes => {this.messages = heroes; console.log(this.messages)},
                      error =>  console.log(error));
-
-  this.route.params.subscribe((params: Params) =>{
-  this.chatId = +params['id'];
-  return(this.messages = this.messageService.getAll(this.chatId));
-});
   
-   this.subscription = this.messageService
-                        .getSearchValue()
-                        .subscribe(value => this.searchValue = value) 
+  this.subscription = this.messageService
+                      .getSearchValue()
+                      .subscribe(value => this.searchValue = value) 
   }
  
    ngOnDestroy(){

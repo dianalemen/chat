@@ -27,10 +27,10 @@ private heroesUrl = 'http://eleksfrontendcamp-mockapitron.rhcloud.com/messages';
         return body;
     }
 
-    getAll(chatId){
-      const messages = MESSAGES.filter(message => message.chatId === chatId);
-          return Promise.resolve(messages);
-    }
+   // getAll(chatId){
+      //const messages = MESSAGES.filter(message => message.chatId === chatId);
+         // return Promise.resolve(messages);
+    //}
 
     public setSearchValue(value: string): void{
         this.search$.next(value);

@@ -11,15 +11,15 @@
         </li>
     </ul>
     <ul class="chat-content__massege1">
-        <li class="chat-content__massege" *ngFor='let message of messages | async | MessageFilter: searchValue'>
+        <li class="chat-content__massege" *ngFor='let message of messages'>
             <div class="user-content__image "></div>
             <div class="chat-content__container ">
                 <div class="chat-content__text " hightlight=true>
-                    <p>{{ message.text }}
+                    <p>{{ message.msg }}
                     </p>
                 </div>
                 <div class="chat-content__time ">
-                    <p>{{message.sentAt | date:'medium'}}</p>
+                    <p>{{message.time}}</p>
                 </div>
             </div>
             <button (click)="onMessages()">Get</button>

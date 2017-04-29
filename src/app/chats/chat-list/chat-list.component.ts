@@ -31,14 +31,14 @@ export class ChatListComponent implements OnInit, OnDestroy {
   
 
     // Navigate with relative link
-    this.router.navigate(['chat', chat.id])
+    this.router.navigate(['chat', 1])
   }
 
   ngOnInit(){
       
-      this.subscription = this.service
-      .getSearchValue()
-      .subscribe(value => this.searchValue = value);
+     // this.subscription = this.service
+      //.getSearchValue()
+      //.subscribe(value => this.searchValue = value);
      }
 
   public ngOnDestroy(){
