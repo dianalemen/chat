@@ -17,6 +17,7 @@ import * as io from 'socket.io-client';
 export class MessageListComponent implements OnInit, OnDestroy {
   chatId: number;
   socket;
+  heroes;
 
   private searchValue: string ="";
   private subscription: Subscription;
@@ -29,12 +30,16 @@ export class MessageListComponent implements OnInit, OnDestroy {
               userService: UserService
               
               ) {this.socket = io.connect('http://eleksfrontendcamp-mockapitron.rhcloud.com:8000')
-             this.socket.on('connect', () => {
-                this.socket.emit('authenticate', { token: localStorage['token'] });
+                   this.socket.on('connect', () => {
+               this.socket.emit('authenticate', { token: localStorage['token'] });
               });
             }
 
   ngOnInit() {
+  this.messageService.getHeroes().subscribe(
+                     heroes => {this.heroes = heroes; console.log(heroes)},
+                     error =>  console.log(error));
+
   this.route.params.subscribe((params: Params) =>{
   this.chatId = +params['id'];
   return(this.messages = this.messageService.getAll(this.chatId));
@@ -48,7 +53,8 @@ export class MessageListComponent implements OnInit, OnDestroy {
    ngOnDestroy(){
      this.subscription.unsubscribe();
 
-}
+  }
+
   private onSearchValueChange(value: string): void{
       this.messageService.setSearchValue(value);
   }
@@ -60,5 +66,5 @@ onMessages(){
 
 joinGroup(){
     this.socket.emit('message', 'message from angular');
-}
+} 
 }
