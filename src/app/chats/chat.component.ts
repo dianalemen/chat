@@ -13,6 +13,6 @@ export class ChatsComponent implements OnInit{
 
     constructor (private chatService: ChatService){}
     ngOnInit(){
-        this.chats = this.chatService.getAll();
+       this.chats = this.chatService.getAll();
     }
 }
