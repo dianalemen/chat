@@ -2,11 +2,23 @@
     display: flex;
 }
 
+ul {
+    padding-left: 0;
+}
+
 .chat-content__info {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
     padding: 10px;
+}
+
+.user-content__image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url(assets/img/defaultAvatar.png);
+    background-position-x: -10px;
 }
 
 .chat-content__massege:nth-child(odd) {
