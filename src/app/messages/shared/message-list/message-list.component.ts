@@ -35,8 +35,7 @@ export class MessageListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
   this.messageService.getHeroes().subscribe(
-                     heroes => {this.messages = heroes;
-                                this.messages.slice(this.messages.length-5, this.messages.length)},
+                     heroes => {this.messages = heroes},
                      error =>  console.log(error));
   
   this.subscription = this.messageService
