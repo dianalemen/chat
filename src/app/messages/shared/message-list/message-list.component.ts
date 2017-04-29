@@ -17,8 +17,8 @@ import * as io from 'socket.io-client';
 export class MessageListComponent implements OnInit, OnDestroy {
   chatId: number;
   socket;
-  heroes;
   messages;
+
   private searchValue: string ="";
   private subscription: Subscription;
 
@@ -35,7 +35,8 @@ export class MessageListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
   this.messageService.getHeroes().subscribe(
-                     heroes => {this.messages = heroes; console.log(this.messages)},
+                     heroes => {this.messages = heroes;
+                                this.messages.slice(this.messages.length-5, this.messages.length)},
                      error =>  console.log(error));
   
   this.subscription = this.messageService
