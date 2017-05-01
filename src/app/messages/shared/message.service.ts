@@ -24,7 +24,7 @@ private heroesUrl = 'http://eleksfrontendcamp-mockapitron.rhcloud.com/messages';
 
     private extractData(res: Response) {
         let body = res.json();
-        return body.slice(body.length-6);
+        return body.slice(body.length-4);
     }
 
    // getAll(chatId){

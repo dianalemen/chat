@@ -4,6 +4,13 @@
 
 ul {
     padding-left: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.chat-right-side {
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .chat-content__info {
@@ -11,6 +18,10 @@ ul {
     justify-content: space-between;
     margin-bottom: 10px;
     padding: 10px;
+}
+
+.chat-content__massege1 {
+    margin-top: 40px;
 }
 
 .user-content__image {
@@ -56,7 +67,7 @@ button {
 
 .chat-content__text {
     align-content: flex-start;
-    background-color: #a58adc;
+    background-color: #6a6cb5;
     border-radius: 10px;
     min-width: 200px;
     padding: 1px 1px 1px 1px;
