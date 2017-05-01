@@ -18,9 +18,8 @@ export class NavComponent implements OnInit{
 
     ngOnInit(){
         if(this.isLogedIn()){
-        this.userService
-        .getUserState()
-        .subscribe(state => {this.username = state.username; console.log('state', state)});
+            
+        this.username = localStorage.getItem('user');
         }
     }
     private isLogedIn(){

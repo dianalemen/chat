@@ -13,13 +13,12 @@ export class UserService{
     
     public setUserState(state): void{
         localStorage.setItem('token', state.token);
+        localStorage.setItem('user', state.user.username);
         this._state.next(state.user);
     }
 
     public getUserState(): BehaviorSubject<any>{
        return this._state;
-       
-        
     }
     public authenticated(): boolean{
         if(localStorage.getItem('token')){
