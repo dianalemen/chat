@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Http, Response, Headers } from '@angular/http';
 
 @Component({
     selector: 'ct-register',
@@ -11,23 +12,40 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export  class RegisterComponent implements OnInit{
     user: FormGroup;
-    
-    constructor( private fb: FormBuilder){
-        
 
-    }
+    private signUpUrl = 'http://eleksfrontendcamp-mockapitron.rhcloud.com/signup';
+    
+    constructor( private fb: FormBuilder,
+                 private http: Http){}
+
     ngOnInit(){
         this.user = this.fb.group({
-            name:['', [Validators.required]],
+            username:['', [Validators.required]],
             email: ['', [Validators.required]],
-            passwords: this.fb.group({
+            //passwords: this.fb.group({
                 password: ['', [Validators.required]],
                 confirmPassword: ['', [Validators.required]]
-            })
+           // })
         });
         
     }
     onSubmit(user){
         console.log(user.value, user.valid);
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+
+       this.http.post(this.signUpUrl, user.value)
+             .toPromise()
+             .then(this.extractData)
+             .catch (error => console.log(error));
     }
+    private extractData(res: Response) {
+        let body;
+
+    // check if empty, before call json
+    if (res.text()) {
+        body = res.json();
+    }
+
+    return body || {};
+}
 }
