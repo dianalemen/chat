@@ -12,24 +12,29 @@ export class UserService{
     private _state: BehaviorSubject<any> = new BehaviorSubject<any>({});
     
     public setUserState(state): void{
-        this._state.next(state);
         localStorage.setItem('token', state.token);
-        //console.log(localStorage['token']);
+        this._state.next(state.user);
     }
 
     public getUserState(): BehaviorSubject<any>{
-        return this._state;
+       return this._state;
+       
+        
     }
-    public get authenticated(): boolean{
-    return this._authenticated;
+    public authenticated(): boolean{
+        if(localStorage.getItem('token')){
+            return true;
+        } else {
+        return false;
+        }
     }
 
     constructor (private http: Http,
     private auth: AuthService){}
 
     public login(user): Observable<any>{
-       return this.http.post(API_CONFIG.LOGIN, user).map(res => res.json())
-
+       return this.http.post(API_CONFIG.LOGIN, user).map(res => {res.json(); console.log('res',res)})
+    
     }
     
     public logout(): void{

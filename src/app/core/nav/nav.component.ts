@@ -11,17 +11,21 @@ import { Router } from '@angular/router';
 
 export class NavComponent implements OnInit{
     private username: string ="";
+    private user = {};
     constructor(private userService: UserService,
     private router: Router
     ){}
 
     ngOnInit(){
+        if(this.isLogedIn()){
         this.userService
         .getUserState()
-        .subscribe(state => this.username = state.username)
+        .subscribe(state => {this.username = state.username; console.log('state', state)});
+        }
     }
-private isLogedIn(): boolean{
-    return this.userService.authenticated;
+    private isLogedIn(){
+        console.log('isloggedin', this.userService.authenticated());
+    return this.userService.authenticated();
 }
     onLoOut(){
         this.userService.logout();
