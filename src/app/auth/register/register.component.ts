@@ -40,6 +40,7 @@ export  class RegisterComponent implements OnInit{
              .toPromise()
              .then(this.extractData)
              .catch (error => console.log(error));
+             this.router.navigate(['auth/login']);
     }
 
     private extractData(res: Response) {
