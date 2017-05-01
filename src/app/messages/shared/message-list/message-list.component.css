@@ -12,7 +12,14 @@ ul {
     flex-grow: 1
 }
 
+.username {
+    color: #bfdfe4;
+}
+
 .chat-right-side {
+    display: flex;
+    flex-direction: column;
+    height: 587px;
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -26,6 +33,11 @@ ul {
 
 .chat-content__massege1 {
     margin-top: 40px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    justify-content: flex-end;
 }
 
 .user-content__image {
@@ -62,7 +74,7 @@ button {
 }
 
 .chat-content__time p {
-    color: #eef4f5;
+    color: #bfdfe4;
 }
 
 .chat-content__massege:nth-child(odd) .chat-content__container .chat-content__text {
@@ -78,6 +90,7 @@ button {
 }
 
 .chat-content__text p {
+    padding-left: 5px;
     margin-left: 5px;
     margin-right: 5px;
 }
