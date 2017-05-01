@@ -1,13 +1,11 @@
 section {
-    background-color: #ac45fd;
     border-top: 1px solid white;
     min-height: 557px;
     width: 100%;
 }
 
 .tab>label {
-    background-color: #ac45fd;
-    border: 1px solid #ac45fd;
+    ;
     display: inline-block;
     left: 1px;
     margin-left: -1px;
@@ -21,7 +19,6 @@ section {
 }
 
 .content {
-    background-color: #ac45fd;
     bottom: 0;
     left: 0;
     margin-top: 100px;
@@ -33,10 +30,9 @@ section {
 }
 
 .content input {
-    background-color: #b32ecc;
     border: none;
-    border-radius: 6px;
-    color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.47);
+    color: rgba(0, 0, 0, 0.47);
     height: 21px;
     margin: auto;
     margin-bottom: 13px;
@@ -52,7 +48,6 @@ section {
 }
 
 button {
-    background-color: #b32ecc;
     border: none;
     border-radius: 6px;
     margin-left: 17.5%;
