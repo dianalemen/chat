@@ -29,6 +29,7 @@ export  class RegisterComponent implements OnInit{
         });
         
     }
+    
     onSubmit(user){
         console.log(user.value, user.valid);
     let headers = new Headers({ 'Content-Type': 'application/json' });
@@ -38,14 +39,14 @@ export  class RegisterComponent implements OnInit{
              .then(this.extractData)
              .catch (error => console.log(error));
     }
+
     private extractData(res: Response) {
         let body;
 
-    // check if empty, before call json
     if (res.text()) {
         body = res.json();
     }
 
     return body || {};
-}
+    }
 }
