@@ -19,15 +19,15 @@
             <label for="password">Пароль</label>
             <input type="password" formControlName="password" placeholder="Придумайте пароль">
             <!-- <div *ngIf="user.controls.passwords.controls.password.hasError('required') && user.controls.passwords.controls.password.touched" class="error">
-                    Password is required
-                </div> -->
+                Password is required
+            </div>-->
         </div>
         <div>
             <label for="password2">Ще раз пароль</label>
             <input type="password" formControlName="confirmPassword" placeholder="Підтвердіть пароль">
             <!-- <div *ngIf="user.controls.passwords.controls.confirmPassword.hasError('required') && user.controls.passwords.controls.confirmPassword.touched" class="error">
-                    Confirm Password is required
-                </div> -->
+                Confirm Password is required
+            </div> -->
         </div>
         <!--</div>-->
         <button type="submit" [disabled]="user.invalid">Зареєструватися</button>

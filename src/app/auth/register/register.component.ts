@@ -25,11 +25,11 @@ export  class RegisterComponent implements OnInit{
             //passwords: this.fb.group({
                 password: ['', [Validators.required]],
                 confirmPassword: ['', [Validators.required]]
-           // })
+            //})
         });
         
     }
-    
+
     onSubmit(user){
         console.log(user.value, user.valid);
     let headers = new Headers({ 'Content-Type': 'application/json' });
