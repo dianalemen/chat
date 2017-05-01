@@ -1,6 +1,6 @@
 <nav class="navigation">
-    <ng-container class="" *ngIf="isLogedIn()">
-        <span>{{username}}</span></ng-container>
+
+    <span *ngIf="isLogedIn()">{{username}}</span>
     <a routerLink="/" routerLinkActive="active" *ngIf="isLogedIn()">Home</a>
     <a routerLink="/chat" routerLinkActive="active" *ngIf="isLogedIn()">Chat</a>
     <a routerLink="/auth/login" routerLinkActive="active">Login</a>

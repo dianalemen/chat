@@ -8,6 +8,10 @@ ul {
     margin-top: 0;
 }
 
+.list {
+    flex-grow: 1
+}
+
 .chat-right-side {
     overflow-x: hidden;
     overflow-y: scroll;

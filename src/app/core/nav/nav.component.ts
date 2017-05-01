@@ -14,13 +14,13 @@ export class NavComponent implements OnInit{
     private user = {};
     constructor(private userService: UserService,
     private router: Router
-    ){}
+    ){
+        if(this.isLogedIn()){
+              this.username = localStorage.getItem('user');
+        }}
 
     ngOnInit(){
-        if(this.isLogedIn()){
-            
-        this.username = localStorage.getItem('user');
-        }
+
     }
     private isLogedIn(){
         console.log('isloggedin', this.userService.authenticated());

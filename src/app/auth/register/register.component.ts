@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Http, Response, Headers } from '@angular/http';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'ct-register',
@@ -16,7 +17,8 @@ export  class RegisterComponent implements OnInit{
     private signUpUrl = 'http://eleksfrontendcamp-mockapitron.rhcloud.com/signup';
     
     constructor( private fb: FormBuilder,
-                 private http: Http){}
+                 private http: Http,
+                 private router: Router){}
 
     ngOnInit(){
         this.user = this.fb.group({
