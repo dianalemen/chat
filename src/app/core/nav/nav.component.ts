@@ -25,7 +25,7 @@ export class NavComponent implements OnInit{
     private isLogedIn(){
     return this.userService.authenticated();
 }
-    onLoOut(){
+    onLogOut(){
         this.userService.logout();
         this.router.navigate(['auth/login'])
     }

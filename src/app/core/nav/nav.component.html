@@ -5,5 +5,5 @@
     <a routerLink="/chat" routerLinkActive="active" *ngIf="isLogedIn()">Chat</a>
     <a routerLink="/auth/login" routerLinkActive="active">Login</a>
     <a routerLink="/auth/register" routerLinkActive="active">Register</a>
-
+    <a routerLink="/chat" routerLinkActive="active" *ngIf="isLogedIn()" (click)="onLogOut()">Logout</a>
 </nav>

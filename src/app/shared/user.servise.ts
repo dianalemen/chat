@@ -37,8 +37,7 @@ export class UserService{
     }
     
     public logout(): void{
-        this._authenticated = false;
-        this._state.next({});
+        localStorage.clear();
         console.log('user logout');
     }
 
