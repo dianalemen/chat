@@ -20,8 +20,6 @@ ul {
     display: flex;
     flex-direction: column;
     height: 587px;
-    overflow-x: hidden;
-    overflow-y: scroll;
 }
 
 .chat-content__info {
@@ -31,13 +29,22 @@ ul {
     padding: 10px;
 }
 
+.chat-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
 .chat-content__massege1 {
     margin-top: 40px;
     margin-top: 40px;
     display: flex;
+    flex: 1;
     flex-direction: column;
     flex-grow: 2;
-    justify-content: flex-end;
+    overflow-y: auto;
+    margin-top: 0;
 }
 
 .user-content__image {
@@ -109,4 +116,13 @@ input[type="button"] {
     outline: none;
     padding: 5px;
     width: 28px;
+}
+
+.chat-content {
+    flex: 1;
+}
+
+.chat-content__massege {
+    flex: 1;
+    min-height: 100px;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewChecked } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { MessageService } from '../message.service';
 import { UserService } from '../../../shared/user.servise';
@@ -13,7 +13,7 @@ import * as io from 'socket.io-client';
   templateUrl: './message-list.component.html'
 })
 
-export class MessageListComponent implements OnInit, OnDestroy {
+export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked {
   chatId: number;
   socket;
   messages;
@@ -32,6 +32,7 @@ export class MessageListComponent implements OnInit, OnDestroy {
                this.socket.emit('authenticate', { token: localStorage['token'] });
               });
               this.onMessages();
+              
             }
 
   ngOnInit() {
@@ -43,6 +44,19 @@ export class MessageListComponent implements OnInit, OnDestroy {
                       .getSearchValue()
                       .subscribe(value => this.searchValue = value) 
   }
+
+  ngAfterViewChecked(){
+    this.scrollTop();
+  }
+  
+  scrollTop(){
+    let ele = document.getElementsByClassName('chat-content');
+    let eleArray = <Element[]>Array.prototype.slice.call(ele);
+    eleArray.map( val => {
+        val.scrollTop = val.scrollHeight;
+        console.log('top',val.scrollTop);
+    });}
+  
  
    ngOnDestroy(){
      this.subscription.unsubscribe();
@@ -57,4 +71,5 @@ export class MessageListComponent implements OnInit, OnDestroy {
                (this.messages.push(msg));
                 })
   }
+
 }
