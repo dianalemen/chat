@@ -1,6 +1,6 @@
 <section class="chat-input ">
-    <form class="chat-input__msg " (submit)="greate(inputText)">
-        <textarea placeholder="Введіть повідомлення... " #inputText></textarea>
+    <form class="chat-input__msg " #form="ngForm" (ngSubmit)="greate(form, $event)">
+        <textarea placeholder="Введіть повідомлення... " name="text" [ngModel]="text"></textarea>
         <button type="submit"> <span class="icon-files-empty "></span></button>
     </form>
 </section>

@@ -23,7 +23,6 @@ export class NavComponent implements OnInit{
 
     }
     private isLogedIn(){
-        console.log('isloggedin', this.userService.authenticated());
     return this.userService.authenticated();
 }
     onLoOut(){

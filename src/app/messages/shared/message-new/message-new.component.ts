@@ -11,30 +11,29 @@ import * as moment from 'moment';
 })
 
 export class MessageNewComponent implements OnInit {
-
+socket;
 
   constructor() {}
 
   ngOnInit() {}
 
-    greate(inputText){
+    greate(inputText, e){
+      this.onClick(e);
+      console.log(inputText.value);
       let text = inputText.value;
      if(text == ''){
          alert("type your message")
         } else {
-        
-        MESSAGES.push({
-          id: 6,
-          senderId: 4,
-          isRead: true,
-          sentAt: moment().subtract(3, 'minutes').toDate(),
-          text: text,
-          chatId: 2
-        });
-        const messages = MESSAGES;
-        console.log(messages);
-        inputText.value = '';
-        
+          this.joinGroup(text)
+            inputText.value = '';
         }
-    };
+    }
+    joinGroup(text){
+      this.socket.emit('message', text);
+    }
+    onClick(e){
+      console.log(e);
+      e.preventDefault();
+    }
+
   }
