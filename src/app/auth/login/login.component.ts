@@ -31,7 +31,7 @@ form.email
 form.password
  */
   private onSubmit(formData){
-    console.log(formData);
+    //console.log(formData);
 
     const data = {
       pass: formData.password,
@@ -75,7 +75,7 @@ form.password
 
 
   private onLoginSuccess(res: any): void{
-    console.log(res); //token
+    //token(res)
     this.userService.setUserState(res);
     this.router.navigate(['chat'])
   }
