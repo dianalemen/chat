@@ -12,3 +12,15 @@
 .chat-input__msg {
     padding-left: 10%;
 }
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.fa {
+    width: 50px;
+    height: 50px;
+    color: #eef4f5;
+}
