@@ -18,8 +18,8 @@ constructor(){
                 })
             }
 
-            joinGroup(){
-              this.socket.emit('message', 'message from angular');
+            joinGroup(text){
+              this.socket.emit('message', text);
             } 
 
 }

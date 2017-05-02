@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../message.service';
 import { Message } from '../message.model';
 import { MESSAGES } from '../moc-messages';
+import { MessageSocketService } from '../message-soket.service';
 import * as moment from 'moment';
 
 @Component({
@@ -13,23 +14,25 @@ import * as moment from 'moment';
 export class MessageNewComponent implements OnInit {
 socket;
 
-  constructor() {}
+  constructor(
+    private socketService: MessageSocketService
+  ) {}
 
   ngOnInit() {}
 
     greate(inputText, e){
       this.onClick(e);
-      console.log(inputText.value);
-      let text = inputText.value;
+      let text;
      if(text == ''){
          alert("type your message")
         } else {
-          this.joinGroup(text)
-            inputText.value = '';
+          text = inputText.value.text;
+          this.joinGroup(text);
+          inputText.value.text = '';
         }
     }
     joinGroup(text){
-      this.socket.emit('message', text);
+      this.socketService.joinGroup(text);
     }
     onClick(e){
       console.log(e);

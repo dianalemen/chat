@@ -55,8 +55,4 @@ export class MessageListComponent implements OnInit, OnDestroy {
   onMessages(){
   this.socketService.onMessages();
   }
-
-  joinGroup(){
-    this.socketService.joinGroup();
-  } 
 }
