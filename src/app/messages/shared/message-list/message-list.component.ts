@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { MessageService } from '../message.service';
 import { UserService } from '../../../shared/user.servise';
-import { Message } from '../message.model';
 import { Subscription } from 'rxjs';
 import { MessageSocketService } from '../message-soket.service';
 import * as io from 'socket.io-client';

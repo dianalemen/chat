@@ -12,12 +12,6 @@ constructor(){
               });
             }
 
-            onMessages(){
-              this.socket.on('message', (msg) => {
-                console.log('message', msg);
-                })
-            }
-
             joinGroup(text){
               this.socket.emit('message', text);
             } 

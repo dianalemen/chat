@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../message.service';
-import { Message } from '../message.model';
-import { MESSAGES } from '../moc-messages';
 import { MessageSocketService } from '../message-soket.service';
 import * as moment from 'moment';
 
