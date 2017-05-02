@@ -32,6 +32,7 @@ export class MessageListComponent implements OnInit, OnDestroy {
                    this.socket.on('connect', () => {
                this.socket.emit('authenticate', { token: localStorage['token'] });
               });
+              this.onMessages();
             }
 
   ngOnInit() {
@@ -53,6 +54,8 @@ export class MessageListComponent implements OnInit, OnDestroy {
       this.messageService.setSearchValue(value);
   }
   onMessages(){
-  this.socketService.onMessages();
+   this.socket.on('message', (msg) => {
+               (this.messages.push(msg));
+                })
   }
 }
