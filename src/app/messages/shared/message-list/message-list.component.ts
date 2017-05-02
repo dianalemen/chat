@@ -4,7 +4,7 @@ import { MessageService } from '../message.service';
 import { UserService } from '../../../shared/user.servise';
 import { Message } from '../message.model';
 import { Subscription } from 'rxjs';
-//import { MessageSocketService } from '../message-soket.service';
+import { MessageSocketService } from '../message-soket.service';
 import * as io from 'socket.io-client';
 
 
@@ -25,6 +25,7 @@ export class MessageListComponent implements OnInit, OnDestroy {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private messageService: MessageService,
+              private socketService: MessageSocketService,
               userService: UserService
               
               ) {this.socket = io.connect('http://eleksfrontendcamp-mockapitron.rhcloud.com:8000')
@@ -51,13 +52,11 @@ export class MessageListComponent implements OnInit, OnDestroy {
   private onSearchValueChange(value: string): void{
       this.messageService.setSearchValue(value);
   }
-onMessages(){
-  this.socket.on('message', (msg) => {
-    console.log('message', msg);
-  })
-}
+  onMessages(){
+  this.socketService.onMessages();
+  }
 
-joinGroup(){
-    this.socket.emit('message', 'message from angular');
-} 
+  joinGroup(){
+    this.socketService.joinGroup();
+  } 
 }

@@ -12,4 +12,14 @@ constructor(){
               });
             }
 
+            onMessages(){
+              this.socket.on('message', (msg) => {
+                console.log('message', msg);
+                })
+            }
+
+            joinGroup(){
+              this.socket.emit('message', 'message from angular');
+            } 
+
 }
