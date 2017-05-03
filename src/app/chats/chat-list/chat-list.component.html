@@ -1,29 +1,29 @@
-<section class="chat-left-side">
+<section class="chat-left-side" [ngClass]="{'change-width': isClassVisible }">
     <!-- <section class="chat-left-menu"> -->
     <ul class="chat-users-panel">
         <li class="left-nav">
-            <div class="left-nav__button">
-                <input type="checkbox" class="left-nav__input" onclick="myFunction()">
+            <div class="left-nav__button" (click)="isClassVisible = !isClassVisible;">
+                <input type="checkbox" class="left-nav__input" [ngClass]="{'change-width': isClassVisible }">
             </div>
             <form>
-                <input type="search" name="serch" [(ngModel)]="searchValue" (ngModelChange)="onSearchValueChange($event)" id="searchInput">
+                <input type="search" name="serch" [(ngModel)]="searchValue " (ngModelChange)="onSearchValueChange($event) " id="searchInput ">
                 <input type="button">
             </form>
-            <div class="left-nav__menu">
+            <div class="left-nav__menu ">
                 <button>
-                        <div class="burger"></div>
-                        <div class="burger"></div>
-                        <div class="burger"></div>
+                        <div class="burger "></div>
+                        <div class="burger "></div>
+                        <div class="burger "></div>
                     </button>
             </div>
         </li>
     </ul>
     <ul>
 
-        <li class="user-content" *ngFor="let chat of chats | async | chatPipe: searchValue" (click)="select({id: chat.id})" change-color>
+        <li class="user-content " *ngFor="let chat of chats | async | chatPipe: searchValue " (click)="select({id: chat.id}) " change-color>
             <div class="user-content__image ">
             </div>
-            <div class="user-content__status ">
+            <div class="user-content__status" [ngClass]="{'change-width': isClassVisible }">
                 <p>{{chat.name}}</p>
                 <p>{{chat.status}}</p>
             </div>

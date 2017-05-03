@@ -13,6 +13,7 @@ import { BehaviorSubject, Subscription } from "rxjs/Rx";
 })
 
 export class ChatListComponent implements OnInit, OnDestroy {
+  isClassVisible: false;
 
   private searchValue: string ="";
   private subscription: Subscription;
@@ -26,8 +27,7 @@ export class ChatListComponent implements OnInit, OnDestroy {
     
     ) {}
 
- 
-  select(chat: Chat) {
+    select(chat: Chat) {
   
 
     // Navigate with relative link

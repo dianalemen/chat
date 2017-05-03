@@ -15,6 +15,18 @@ ul {
     overflow-y: scroll;
 }
 
+.change-width {
+    width: 60%;
+}
+
+.change-width form {
+    display: none;
+}
+
+.change-width .user-content__status {
+    display: none;
+}
+
 .chat-users-panel {
     padding-left: 0;
     list-style: none;
@@ -42,6 +54,10 @@ li {
     padding-left: 0;
     position: relative;
     width: 49px;
+}
+
+.change-width .left-nav__input {
+    transform: rotate(225deg);
 }
 
 .left-nav__input {
@@ -126,6 +142,7 @@ input[type="button"] {
     width: 80px;
     height: 80px;
     border-radius: 50%;
+    background-image: url(assets/img/defaultAvatar.png);
     background-position-x: -10px;
 }
 

@@ -54,7 +54,6 @@ export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked
     let eleArray = <Element[]>Array.prototype.slice.call(ele);
     eleArray.map( val => {
         val.scrollTop = val.scrollHeight;
-        console.log('top',val.scrollTop);
     });}
   
  
