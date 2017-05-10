@@ -31,15 +31,15 @@ form.email
 form.password
  */
   private onSubmit(formData){
-    console.log(formData);
+    //console.log(formData);
 
     const data = {
       username: formData.username,
       password: formData.password
-    }; console.log(data);
+    }; 
     this.authService
     .login(data)
-    .subscribe(this.onLoginSuccess.bind(this), this.onLoginError)
+    .subscribe(this.onLoginSuccess.bind(this), this.onLoginError.bind(this))
       };
 
   
