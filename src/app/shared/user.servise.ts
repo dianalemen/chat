@@ -12,6 +12,7 @@ export class UserService{
     private _state: BehaviorSubject<any> = new BehaviorSubject<any>({});
     
     public setUserState(state): void{
+        console.log("state",state);
         localStorage.setItem('token', state.token);
         localStorage.setItem('user', state.user.username);
         this._state.next(state.user);
@@ -32,7 +33,8 @@ export class UserService{
     private auth: AuthService){}
 
     public login(user): Observable<any>{
-       return this.http.post(API_CONFIG.LOGIN, user).map(res => {res.json(); console.log('res',res)})
+        console.log(user);
+       return this.http.post(API_CONFIG.LOGIN, user).map(res => res.json())
     
     }
     

@@ -1,3 +1,3 @@
 export const API_CONFIG: any ={
-    LOGIN: 'http://eleksfrontendcamp-mockapitron.rhcloud.com/login'
+    LOGIN: 'http://localhost:3000/login'
 }

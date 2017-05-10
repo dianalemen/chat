@@ -31,12 +31,12 @@ form.email
 form.password
  */
   private onSubmit(formData){
-    //console.log(formData);
+    console.log(formData);
 
     const data = {
-      pass: formData.password,
-      username: formData.email
-    };
+      username: formData.username,
+      password: formData.password
+    }; console.log(data);
     this.authService
     .login(data)
     .subscribe(this.onLoginSuccess.bind(this), this.onLoginError)
@@ -76,7 +76,8 @@ form.password
 
   private onLoginSuccess(res: any): void{
     //token(res)
-    this.userService.setUserState(res);
+    console.log(res);
+    this.userService.setUserState(res)
     this.router.navigate(['chat'])
   }
 
