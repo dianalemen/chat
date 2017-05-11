@@ -16,7 +16,7 @@ export class NavComponent implements OnInit{
     private router: Router
     ){
         if(this.isLogedIn()){
-              this.username = localStorage.getItem('user');
+             this.username = localStorage.getItem('user');
         }}
 
     ngOnInit(){

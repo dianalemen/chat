@@ -12,9 +12,9 @@ export class UserService{
     private _state: BehaviorSubject<any> = new BehaviorSubject<any>({});
     
     public setUserState(state): void{
-        console.log("state",state);
+        console.log("state", state);
         localStorage.setItem('token', state.token);
-        localStorage.setItem('user', state.user.username);
+        localStorage.setItem('user', state.user);
         this._state.next(state.user);
     }
 
