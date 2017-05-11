@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export  class RegisterComponent implements OnInit{
     user: FormGroup;
 
-    private signUpUrl = 'http://eleksfrontendcamp-mockapitron.rhcloud.com/signup';
+    private signUpUrl = 'http://localhost:3000/registration';
     
     constructor( private fb: FormBuilder,
                  private http: Http,
@@ -23,10 +23,10 @@ export  class RegisterComponent implements OnInit{
     ngOnInit(){
         this.user = this.fb.group({
             username:['', [Validators.required]],
-            email: ['', [Validators.required]],
+            password: ['', [Validators.required]],
             //passwords: this.fb.group({
-                password: ['', [Validators.required]],
-                confirmPassword: ['', [Validators.required]]
+                email: ['', [Validators.required]],
+                name: ['', [Validators.required]]
             //})
         });
         

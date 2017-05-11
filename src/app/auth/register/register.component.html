@@ -9,7 +9,7 @@
         </div>
         <div>
             <label for="email">Email</label>
-            <input type="email" formControlName="email" placeholder="Введіть email">
+            <input type="password" formControlName="password" placeholder="Введіть email">
             <div *ngIf="user.get('email').hasError('required') && user.get('email').touched" class="error">
                 Email is required
             </div>
@@ -17,14 +17,14 @@
         <!--<div formGroupName="passwords">-->
         <div>
             <label for="password">Пароль</label>
-            <input type="password" formControlName="password" placeholder="Придумайте пароль">
+            <input type="email" formControlName="email" placeholder="Придумайте пароль">
             <!-- <div *ngIf="user.controls.passwords.controls.password.hasError('required') && user.controls.passwords.controls.password.touched" class="error">
                 Password is required
             </div>-->
         </div>
         <div>
             <label for="password2">Ще раз пароль</label>
-            <input type="password" formControlName="confirmPassword" placeholder="Підтвердіть пароль">
+            <input type="text" formControlName="name" placeholder="Підтвердіть пароль">
             <!-- <div *ngIf="user.controls.passwords.controls.confirmPassword.hasError('required') && user.controls.passwords.controls.confirmPassword.touched" class="error">
                 Confirm Password is required
             </div> -->
