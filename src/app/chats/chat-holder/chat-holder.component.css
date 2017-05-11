@@ -1,8 +1,13 @@
 .chat-holder {
     display: flex;
+    background-color: white;
 }
 
 .chat-holder h1 {
     margin: auto;
     line-height: 530px;
+}
+
+h1 {
+    padding-left: 10px;
 }

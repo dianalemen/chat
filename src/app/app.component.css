@@ -1,7 +1,3 @@
-* {
-    background-color: #ac45fd;
-}
-
 h1 {
     margin: 0;
     padding: 0;
@@ -9,8 +5,7 @@ h1 {
 
 #app-home {
     border-top: 1px solid white;
-    color: #722e88;
-    padding-left: 5%;
+    padding-left: 10px;
     padding-bottom: 20px;
     padding-top: 20px;
 }
