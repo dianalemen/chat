@@ -9,7 +9,7 @@ export class MessageService{
 
 heroes;
 
-private heroesUrl = 'http://eleksfrontendcamp-mockapitron.rhcloud.com/messages';  // URL to web API
+private heroesUrl = 'http://localhost:3000/readmsg';  // URL to web API
 
     constructor(
         private http: Http

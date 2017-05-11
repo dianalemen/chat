@@ -37,7 +37,7 @@ export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked
 
   ngOnInit() {
   this.messageService.getHeroes().subscribe(
-                     heroes => {this.messages = heroes},
+                     heroes => {this.messages = heroes, console.log(this.messages)},
                      error =>  console.log(error));
   
   this.subscription = this.messageService
