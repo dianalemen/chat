@@ -1,7 +1,6 @@
 .chat-input__msg textarea {
-    background-color: #eef4f5;
+    background-color: #fff;
     border: none;
-    border-radius: 30px;
     height: 49px;
     outline: none;
     padding: 5px 17px;
@@ -10,6 +9,10 @@
 }
 
 .chat-input__msg {
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    border-top: solid 1px #eef4f5;
     padding-left: 10%;
 }
 

@@ -19,7 +19,7 @@ ul {
 .chat-right-side {
     display: flex;
     flex-direction: column;
-    height: 587px;
+    height: 467px;
 }
 
 .chat-content__info {
