@@ -27,8 +27,8 @@ export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked
               private socketService: MessageSocketService,
               userService: UserService
               
-              ) {this.socket = io.connect('http://eleksfrontendcamp-mockapitron.rhcloud.com:8000')
-                   this.socket.on('connect', () => {
+              ) {this.socket = io.connect('http://localhost:3000/')
+                this.socket.on('connect', () => {
                this.socket.emit('authenticate', { token: localStorage['token'] });
               });
               this.onMessages();
@@ -37,7 +37,7 @@ export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked
 
   ngOnInit() {
   this.messageService.getHeroes().subscribe(
-                     heroes => {this.messages = heroes, console.log(this.messages)},
+                     heroes => {this.messages = heroes},
                      error =>  console.log(error));
   
   this.subscription = this.messageService

@@ -6,7 +6,7 @@ export class MessageSocketService{
 socket;
 
 constructor(){
-  this.socket = io.connect('http://eleksfrontendcamp-mockapitron.rhcloud.com:8000')
+  this.socket = io.connect('http://localhost:3000/')
   this.socket.on('connect', () => {
   this.socket.emit('authenticate', { token: localStorage['token'] });
               });
@@ -14,6 +14,6 @@ constructor(){
 
             joinGroup(text){
               this.socket.emit('message', text);
-            } 
+            }
 
 }
