@@ -4,7 +4,7 @@
         <li class="chat-content__massege" *ngFor='let message of messages '>
             <div class="user-content__image"></div>
             <div class="chat-content__container ">
-                <span class="username"></span>
+                <span class="username">{{message.user}}</span>
                 <div class="chat-content__text " hightlight=true>
                     <p>{{ message.body}}
                     </p>
