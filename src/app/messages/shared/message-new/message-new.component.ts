@@ -21,12 +21,11 @@ socket;
     greate(inputText, e){
       this.onClick(e);
       let text;
-     if(text == ''){
+     if(inputText.text == ''){
          alert("type your message")
         } else {
-          text = inputText.value.text;
+          text = inputText.text;
           this.joinGroup(text);
-          inputText.value.text = '';
         }
     }
     joinGroup(text){

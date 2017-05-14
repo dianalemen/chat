@@ -1,6 +1,7 @@
 <section class="chat-input ">
-    <form class="chat-input__msg " #form="ngForm" (ngSubmit)="greate(form, $event)">
-        <textarea name="text" [ngModel]="text" autofocus></textarea>
+    <form class="chat-input__msg " #form="ngForm" (ngSubmit)="greate(form.value, $event); test.value = ' '">
+        <textarea name="text" [(ngModel)]="text" autofocus #test></textarea>
         <button type="submit"><i class="fa fa-paper-plane fa-4x"></i></button>
+        <div></div>
     </form>
 </section>
