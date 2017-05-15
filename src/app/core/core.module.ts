@@ -18,7 +18,9 @@ import { AuthService } from './auth.service';
     NavComponent, 
     HeaderComponent
     ],
-    providers: [AuthService]
+    providers: [
+        AuthService
+        ]
 })
 
 export class CoreModule{

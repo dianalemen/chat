@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { MESSAGES } from './moc-messages';
 import { BehaviorSubject } from 'rxjs';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';

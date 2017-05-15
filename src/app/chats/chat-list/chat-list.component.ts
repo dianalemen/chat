@@ -18,25 +18,27 @@ export class ChatListComponent implements OnInit, OnDestroy {
   private searchValue: string ="";
   private subscription: Subscription;
 
- @Input() chats: Promise<Chat[]>;
+  chats;
 
   constructor(
 
     private router: Router,
-    private service: ChatService
+    private chatService: ChatService
     
     ) {}
 
     select(chat: Chat) {
-  
-
     // Navigate with relative link
     this.router.navigate(['chat', 1])
   }
 
   ngOnInit(){
+  this.chatService.getAll().subscribe(
+                     users => {this.chats = users},
+                     error =>  console.log(error));
+
       
-     this.subscription = this.service
+     this.subscription = this.chatService
       .getSearchValue()
       .subscribe(value => this.searchValue = value);
      }
@@ -46,7 +48,7 @@ export class ChatListComponent implements OnInit, OnDestroy {
   }
 
   private onSearchValueChange(value: string): void{
-      this.service.setSearchValue(value);
+      this.chatService.setSearchValue(value);
   }
 
 

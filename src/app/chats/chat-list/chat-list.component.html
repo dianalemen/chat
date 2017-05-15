@@ -20,7 +20,7 @@
     </ul>
     <ul>
 
-        <li class="user-content " *ngFor="let chat of chats | async | chatPipe: searchValue " (click)="select({id: chat.id}) " change-color>
+        <li class="user-content " *ngFor="let chat of chats | chatPipe: searchValue " (click)="select({id: chat.id}) " change-color>
             <div class="user-content__image ">
             </div>
             <div class="user-content__status" [ngClass]="{'change-width': isClassVisible }">

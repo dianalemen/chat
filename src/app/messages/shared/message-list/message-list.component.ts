@@ -13,10 +13,14 @@ import * as io from 'socket.io-client';
   templateUrl: './message-list.component.html'
 })
 
+
+
 export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked {
   chatId: number;
   socket;
   messages;
+  user: string;
+  time: string;
 
   private searchValue: string ="";
   private subscription: Subscription;
@@ -29,10 +33,11 @@ export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked
               
               ) {this.socket = io.connect('http://localhost:3000/')
                 this.socket.on('connect', () => {
-               this.socket.emit('authenticate', { token: localStorage['token'] });
+                this.socket.emit('authenticate', { token: localStorage['token'] });
               });
               this.onMessages();
-              
+              this.onJoin();
+              this.onLeave();
             }
 
   ngOnInit() {
@@ -59,7 +64,6 @@ export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked
  
    ngOnDestroy(){
      this.subscription.unsubscribe();
-
   }
 
   private onSearchValueChange(value: string): void{
@@ -69,6 +73,17 @@ export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked
    this.socket.on('message', (msg) => {
                (this.messages.push(msg));
                 })
+  }
+  onJoin(){
+    this.socket.on('join', (user) => {
+      this.user = user.user;
+      this.time = user.time;
+    });
+  }
+  onLeave(){
+    this.socket.on('leave', (user) => {
+     console.log(user);
+    });
   }
 
 }

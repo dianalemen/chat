@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../shared/user.servise';
 import { Router } from '@angular/router';
+import { BehaviorSubject, Observable } from 'rxjs';
+
+import { UserService } from '../../shared/user.servise';
 
 
 @Component({
@@ -8,20 +10,23 @@ import { Router } from '@angular/router';
     templateUrl: './nav.component.html',
     styleUrls: ['./nav.component.css']
 })
-
+ 
 export class NavComponent implements OnInit{
-    private username: string ="";
+
+    private username: BehaviorSubject<any> = new BehaviorSubject('');
     private user = {};
     constructor(private userService: UserService,
-    private router: Router
+    private router: Router,
     ){
+    
         if(this.isLogedIn()){
-             this.username = localStorage.getItem('user');
+             this.username = localStorage["user"]
         }}
 
     ngOnInit(){
-
+      
     }
+
     private isLogedIn(){
     return this.userService.authenticated();
 }
