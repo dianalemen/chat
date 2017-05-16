@@ -1,3 +1,3 @@
 export const API_CONFIG: any ={
-    LOGIN: 'http://localhost:3000/login'
+    LOGIN: 'https://safe-everglades-93622.herokuapp.com/login'
 }
