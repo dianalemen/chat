@@ -8,7 +8,7 @@ ul {
 
 .chat-left-side {
     height: 532px;
-    width: 100%;
+    width: 405px;
     float: left;
     background-color: #6a6cb5;
     overflow-x: hidden;
@@ -30,7 +30,7 @@ ul {
 }
 
 .change-width {
-    width: 60%;
+    width: 200px;
 }
 
 .change-width form {

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ChatService } from '../shared/chat.service';
+
 @Component({
   selector: 'ct-chat-detail',
   templateUrl: './chat-detail.component.html',
@@ -8,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ChatDetailComponent implements OnInit {
+  
 
   constructor() {
 

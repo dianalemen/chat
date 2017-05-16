@@ -1,9 +1,10 @@
 <nav class="navigation">
-    <span *ngIf="!(isConnected | async)">off </span>
-    <span *ngIf="isLogedIn()">{{username}}</span>
+
     <a routerLink="/" routerLinkActive="active" *ngIf="isLogedIn()">Home</a>
     <a routerLink="/chat" routerLinkActive="active" *ngIf="isLogedIn()">Chat</a>
     <a routerLink="/auth/login" routerLinkActive="active">Login</a>
     <a routerLink="/auth/register" routerLinkActive="active">Register</a>
     <a routerLink="/chat" routerLinkActive="active" *ngIf="isLogedIn()" (click)="onLogOut()">Logout</a>
+    <span *ngIf="!(isConnected | async)">off </span>
+    <span *ngIf="isLogedIn()">Hello, {{username}}</span>
 </nav>

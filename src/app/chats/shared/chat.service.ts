@@ -9,7 +9,8 @@ export class ChatService{
 users;
 
 private usersUrl = 'https://safe-everglades-93622.herokuapp.com/users';  // URL to web API
-
+    isClassVisible: false;
+    
     constructor(
         private http: Http
     ){}

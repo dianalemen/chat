@@ -7,11 +7,3 @@
 h1 {
     margin: 0;
 }
-
-ct-chat-list {
-    width: 30%;
-}
-
-ct-chat-detail {
-    flex-grow: 2;
-}
