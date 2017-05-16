@@ -16,6 +16,10 @@ const chatRoutes: Routes = [
     component: ChatsComponent,
     children: [
       {
+        path: '',
+        component: ChatHolderComponent,
+      },
+      {
         path: ':id',
         component: ChatDetailComponent
       }

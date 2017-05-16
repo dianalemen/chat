@@ -2,8 +2,7 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Chat } from '../shared/chat.model';
 import { ChatService } from '../shared/chat.service';
-import { BehaviorSubject, Subscription } from "rxjs/Rx";
-
+import { BehaviorSubject, Subscription, Observable } from "rxjs/Rx";
 
 @Component({
   selector: 'ct-chat-list',
@@ -14,14 +13,13 @@ import { BehaviorSubject, Subscription } from "rxjs/Rx";
 
 export class ChatListComponent implements OnInit, OnDestroy {
   isClassVisible: false;
+  status;
+  chats;
 
   private searchValue: string ="";
   private subscription: Subscription;
 
-  chats;
-
   constructor(
-
     private router: Router,
     private chatService: ChatService
     
@@ -31,6 +29,7 @@ export class ChatListComponent implements OnInit, OnDestroy {
     // Navigate with relative link
     this.router.navigate(['chat', 1])
   }
+ 
 
   ngOnInit(){
   this.chatService.getAll().subscribe(

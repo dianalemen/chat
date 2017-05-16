@@ -1,5 +1,5 @@
 <nav class="navigation">
-
+    <span *ngIf="!(isConnected | async)">off </span>
     <span *ngIf="isLogedIn()">{{username}}</span>
     <a routerLink="/" routerLinkActive="active" *ngIf="isLogedIn()">Home</a>
     <a routerLink="/chat" routerLinkActive="active" *ngIf="isLogedIn()">Chat</a>

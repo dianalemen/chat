@@ -13,15 +13,20 @@ import { UserService } from '../../shared/user.servise';
  
 export class NavComponent implements OnInit{
 
+    isConnected;
+
     private username: BehaviorSubject<any> = new BehaviorSubject('');
     private user = {};
     constructor(private userService: UserService,
     private router: Router,
-    ){
-    
-        if(this.isLogedIn()){
+    ){if(this.isLogedIn()){
              this.username = localStorage["user"]
-        }}
+        }
+        
+    this.isConnected = Observable.merge(
+      Observable.of(navigator.onLine),
+      Observable.fromEvent(window, 'online').map(() => true),
+      Observable.fromEvent(window, 'offline').map(() => false));}
 
     ngOnInit(){
       

@@ -76,8 +76,7 @@ export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked
   }
   onJoin(){
     this.socket.on('join', (user) => {
-      this.user = user.user;
-      this.time = user.time;
+      true;
     });
   }
   onLeave(){

@@ -9,7 +9,7 @@ import { Chat } from './shared/chat.model'
 })
 
 export class ChatsComponent implements OnInit{
-    chats: Promise<Chat[]>;
+    chats;
 
     constructor (private chatService: ChatService){}
     ngOnInit(){
