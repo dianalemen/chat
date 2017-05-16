@@ -6,13 +6,18 @@ export class ChangeColorDerective{
 
     constructor (private el: ElementRef){}
 
-   @HostListener('click') onclick($event) {
-    this.changecolor('#D02090', event);
-  }
+i = 0;
+@HostListener('click') onclick() {
+  if (this.i % 2) {
+    this.changecolor('');
+        } else {
+    this.changecolor('#D02090');
+        }
+    this.i++;
+}
 
-  private changecolor(color: string, e) {
-    let el = e.target.parentElement;
-    el.style.backgroundColor = color;
+  private changecolor(color: string) {
+    this.el.nativeElement.style.backgroundColor = color;
   }
 
  
