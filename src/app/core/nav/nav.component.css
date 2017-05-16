@@ -3,6 +3,24 @@ a {
     color: white;
 }
 
+.status {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    float: right;
+}
+
+.changebg {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background-color: red;
+    border-radius: 50%;
+    float: right;
+}
+
 ct-nav {
     display: flex;
     justify-content: space-around;
