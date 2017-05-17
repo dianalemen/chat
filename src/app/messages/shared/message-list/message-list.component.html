@@ -3,7 +3,8 @@
     <ul class="chat-content__massege1 chat-content">
         <li class="chat-content__massege" *ngFor='let message of messages '>
             <div class="user-content__image"></div>
-            <div class="chat-content__container ">
+            <div class="chat-content__container" [ngClass]="{'changebg': user === message.user,
+  'username': user !== message.user}">
                 <span class="username">{{message.user}}</span>
                 <div class="chat-content__text " hightlight=true>
                     <p>{{ message.body}}

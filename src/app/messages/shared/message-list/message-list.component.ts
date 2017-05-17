@@ -71,7 +71,9 @@ export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked
   }
   onMessages(){
    this.socket.on('message', (msg) => {
-               (this.messages.push(msg));
+               (this.messages.push(msg)),
+               this.user = localStorage.getItem('user');
+               console.log(this.user)
                 })
   }
   onJoin(){

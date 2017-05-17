@@ -16,6 +16,10 @@ ul {
     color: #bfdfe4;
 }
 
+.changebg {
+    background-color: red;
+}
+
 .chat-right-side {
     display: flex;
     flex-direction: column;
