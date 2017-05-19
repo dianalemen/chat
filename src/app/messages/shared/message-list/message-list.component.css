@@ -16,8 +16,10 @@ ul {
     color: #bfdfe4;
 }
 
-.changebg {
-    background-color: red;
+.any {}
+
+.change-pos {
+    flex-direction: row-reverse;
 }
 
 .chat-right-side {
@@ -73,10 +75,6 @@ ul {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
-.chat-content__massege:nth-child(odd) {
-    justify-content: flex-end;
-}
-
 button {
     background-color: transparent;
     border: none;
@@ -88,12 +86,6 @@ button {
     width: 30px;
 }
 
-.chat-content__massege:nth-child(odd) .chat-content__container {
-    order: -1;
-}
-
-.chat-content__massege:nth-child(even) .chat-content__container .chat-content__time {}
-
 .chat-content__container {
     max-width: 60%;
 }
@@ -102,13 +94,12 @@ button {
     color: #bfdfe4;
 }
 
-.chat-content__massege:nth-child(odd) .chat-content__container .chat-content__text {
+.chat-content__container .chat-content__text {
     background-color: #eef4f5;
 }
 
 .chat-content__text {
     align-content: flex-start;
-    background-color: #6a6cb5;
     border-radius: 10px;
     min-width: 200px;
     padding: 1px 1px 1px 1px;

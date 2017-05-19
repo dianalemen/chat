@@ -1,17 +1,18 @@
 <!--start chat content -->
 <section class="chat-right-side">
     <ul class="chat-content__massege1 chat-content">
-        <li class="chat-content__massege" *ngFor='let message of messages '>
-            <div class="user-content__image"></div>
-            <div class="chat-content__container" [ngClass]="{'changebg': user === message.user,
-  'username': user !== message.user}">
-                <span class="username">{{message.user}}</span>
-                <div class="chat-content__text " hightlight=true>
-                    <p>{{ message.body}}
-                    </p>
-                </div>
-                <div class="chat-content__time ">
-                    <p>{{message.createAt | date: "mediumTime"}}</p>
+        <li *ngFor='let message of messages'>
+            <div class="chat-content__massege" [ngClass]="(user === message.user)?'change-pos':'any'">
+                <div class="user-content__image"></div>
+                <div class="chat-content__container">
+                    <span class="username">{{message.user}}</span>
+                    <div class="chat-content__text " [ngClass]="(user === message.user)?'change-pos':'any'" hightlight=true>
+                        <p>{{ message.body}}
+                        </p>
+                    </div>
+                    <div class="chat-content__time ">
+                        <p>{{message.createAt | date: "mediumTime"}}</p>
+                    </div>
                 </div>
             </div>
         </li>
