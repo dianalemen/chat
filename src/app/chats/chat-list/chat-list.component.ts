@@ -42,11 +42,7 @@ export class ChatListComponent implements OnInit, OnDestroy {
  
 
   ngOnInit(){
-  this.chatService.getAll().subscribe(
-                     users => {this.chats = users},
-                     error =>  console.log(error));
-
-      
+     this.getAllUsers();  
      this.subscription = this.chatService
       .getSearchValue()
       .subscribe(value => this.searchValue = value);
@@ -59,19 +55,21 @@ export class ChatListComponent implements OnInit, OnDestroy {
   private onSearchValueChange(value: string): void{
       this.chatService.setSearchValue(value);
   }
-   onJoin(){
-    this.socket.on('join', (user) => {
-       this.chatService.getAll().subscribe(
+
+  getAllUsers(){
+    this.chatService.getAll().subscribe(
                      users => {this.chats = users},
                      error =>  console.log(error));
+  }
+   onJoin(){
+    this.socket.on('join', (user) => {
+        this.getAllUsers();
     });
   }
 
    onLeave(){
     this.socket.on('leave', (user) => {
-      this.chatService.getAll().subscribe(
-                     users => {this.chats = users},
-                     error =>  console.log(error));
+      this.getAllUsers();
     });
   }
 }
