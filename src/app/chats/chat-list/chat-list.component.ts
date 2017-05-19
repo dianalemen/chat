@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Chat } from '../shared/chat.model';
 import { ChatService } from '../shared/chat.service';
 import { BehaviorSubject, Subscription, Observable } from "rxjs/Rx";
+import * as io from 'socket.io-client';
 
 @Component({
   selector: 'ct-chat-list',
@@ -13,8 +14,9 @@ import { BehaviorSubject, Subscription, Observable } from "rxjs/Rx";
 
 export class ChatListComponent implements OnInit, OnDestroy {
   isClassVisible: false;
-  status;
+  status: string = "offline";
   chats;
+  socket;
 
   private searchValue: string ="";
   private subscription: Subscription;
@@ -23,7 +25,15 @@ export class ChatListComponent implements OnInit, OnDestroy {
     private router: Router,
     private chatService: ChatService
     
-    ) {}
+    ) {
+      this.socket = io.connect('https://safe-everglades-93622.herokuapp.com/')
+      //this.socket = io.connect('http:/localhost:3000/')
+      this.socket.on('connect', () => {
+      this.socket.emit('authenticate', { token: localStorage['token'] });
+              })
+              this.onJoin();
+              this.onLeave()
+    }
 
     select(chat: Chat) {
     // Navigate with relative link
@@ -49,6 +59,19 @@ export class ChatListComponent implements OnInit, OnDestroy {
   private onSearchValueChange(value: string): void{
       this.chatService.setSearchValue(value);
   }
+   onJoin(){
+    this.socket.on('join', (user) => {
+       this.chatService.getAll().subscribe(
+                     users => {this.chats = users},
+                     error =>  console.log(error));
+    });
+  }
 
-
+   onLeave(){
+    this.socket.on('leave', (user) => {
+      this.chatService.getAll().subscribe(
+                     users => {this.chats = users},
+                     error =>  console.log(error));
+    });
+  }
 }

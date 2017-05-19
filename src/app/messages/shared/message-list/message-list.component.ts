@@ -20,7 +20,7 @@ export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked
   socket;
   messages;
   user: string;
-  time: string;
+
 
   private searchValue: string ="";
   private subscription: Subscription;
@@ -32,17 +32,17 @@ export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked
               userService: UserService
               
               ) {this.socket = io.connect('https://safe-everglades-93622.herokuapp.com/')
+              //this.socket = io.connect('http://localhost:3000/')
                 this.socket.on('connect', () => {
                 this.socket.emit('authenticate', { token: localStorage['token'] });
               });
               this.onMessages();
-              this.onJoin();
-              this.onLeave();
             }
 
   ngOnInit() {
   this.messageService.getHeroes().subscribe(
-                     heroes => {this.messages = heroes},
+                     heroes => {this.messages = heroes,
+                     this.user = localStorage.getItem('user')},
                      error =>  console.log(error));
   
   this.subscription = this.messageService
@@ -71,20 +71,11 @@ export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked
   }
   onMessages(){
    this.socket.on('message', (msg) => {
-               (this.messages.push(msg)),
-               this.user = localStorage.getItem('user');
+               (this.messages.push(msg));
                console.log(this.user)
                 })
   }
-  onJoin(){
-    this.socket.on('join', (user) => {
-      true;
-    });
-  }
-  onLeave(){
-    this.socket.on('leave', (user) => {
-     console.log(user);
-    });
-  }
+ 
+ 
 
 }
