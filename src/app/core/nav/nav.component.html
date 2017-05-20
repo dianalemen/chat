@@ -1,11 +1,9 @@
 <nav class="navigation">
 
-    <a routerLink="/" routerLinkActive="active" *ngIf="isLogedIn()">Home</a>
+    <div *ngIf="isLogedIn()" class="status" [ngClass]="!(isConnected | async)?'changebg':'status'"></div>
+    <a routerLink="/" routerLinkActive="active" *ngIf="isLogedIn()" id="username">Hello, {{username}}</a>
     <a routerLink="/chat" routerLinkActive="active" *ngIf="isLogedIn()">Chat</a>
     <a routerLink="/auth/login" routerLinkActive="active" *ngIf="!isLogedIn()">Login</a>
     <a routerLink="/auth/register" routerLinkActive="active" *ngIf="!isLogedIn()">Register</a>
     <a routerLink="/chat" routerLinkActive="active" *ngIf="isLogedIn()" (click)="onLogOut()">Logout</a>
-
-    <div *ngIf="isLogedIn()" class="status" [ngClass]="!(isConnected | async)?'changebg':'status'"></div>
-    <a routerLink="/" routerLinkActive="active" *ngIf="isLogedIn()" id="username">Hello, {{username}}</a>
 </nav>

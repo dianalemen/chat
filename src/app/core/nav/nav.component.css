@@ -1,24 +1,19 @@
-a {
+.navigation a {
     text-decoration: none;
     color: white;
+    font-size: 21px;
+    margin-left: 11px;
 }
 
 .status {
-    display: inline-block;
     width: 9px;
     height: 9px;
     background-color: greenyellow;
     border-radius: 50%;
-    float: right;
 }
 
 .changebg {
-    display: inline-block;
-    width: 9px;
-    height: 9px;
     background-color: red;
-    border-radius: 50%;
-    float: right;
 }
 
 ct-nav {
