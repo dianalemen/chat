@@ -8,7 +8,8 @@ export class ChatService{
 
 users;
 
-private usersUrl = 'https://safe-everglades-93622.herokuapp.com/users';  // URL to web API
+    private usersUrl = 'https://safe-everglades-93622.herokuapp.com/users'; // URL to web API
+    //private usersUrl = 'http://localhost:3000/users'; 
     isClassVisible: false;
     
     constructor(
@@ -20,6 +21,14 @@ private usersUrl = 'https://safe-everglades-93622.herokuapp.com/users';  // URL 
        return this.http.get(this.usersUrl)
                     .map(this.extractData);
     }
+
+    displayLocation(Latitude, Longitude) {
+        return this.http
+            .get('http://maps.googleapis.com/maps/api/geocode/json?latlng='+
+            Latitude+','+
+            Longitude+'&sensor=true')
+            .map(this.extractData);
+    };
 
     private extractData(res: Response) {
         let body = res.json();

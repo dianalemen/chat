@@ -8,7 +8,8 @@ export class MessageService{
 
 heroes;
 
-private heroesUrl = 'https://safe-everglades-93622.herokuapp.com/readmsg';  // URL to web API
+    private heroesUrl = 'https://safe-everglades-93622.herokuapp.com/readmsg';
+    //private heroesUrl = 'http://localhost:3000/readmsg';  // URL to web API
 
     constructor(
         private http: Http

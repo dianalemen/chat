@@ -98,7 +98,7 @@ li {
 .change-width .left-nav__input {
     transform: rotate(225deg);
     left: 0;
-    transition: transform 0.3s;
+    transition: rotate 0.3s;
 }
 
 .left-nav__input {

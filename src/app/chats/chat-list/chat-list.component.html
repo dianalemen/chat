@@ -25,7 +25,7 @@
             </div>
             <div class="user-content__status" [ngClass]="{'change-width': isClassVisible }">
                 <p>{{chat.username}}</p>
-                <p>{{chat.status}}</p>
+                <p>{{chat.status}}, {{chat.addr}}</p>
             </div>
             <div class="user-content__time ">
                 <p class="time ">{{ value | time }} h </p>

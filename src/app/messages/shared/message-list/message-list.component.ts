@@ -32,7 +32,7 @@ export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked
               userService: UserService
               
               ) {this.socket = io.connect('https://safe-everglades-93622.herokuapp.com/')
-              //this.socket = io.connect('http://localhost:3000/')
+               //this.socket = io.connect('http://localhost:3000/')
                 this.socket.on('connect', () => {
                 this.socket.emit('authenticate', { token: localStorage['token'] });
               });

@@ -16,6 +16,8 @@ export class ChatListComponent implements OnInit, OnDestroy {
   isClassVisible: false;
   chats;
   socket;
+  latitude;
+  longitude;
 
   private searchValue: string ="";
   private subscription: Subscription;
@@ -26,12 +28,12 @@ export class ChatListComponent implements OnInit, OnDestroy {
     
     ) {
       this.socket = io.connect('https://safe-everglades-93622.herokuapp.com/')
-      //this.socket = io.connect('http:/localhost:3000/')
+      //this.socket = io.connect('http://localhost:3000/')
       this.socket.on('connect', () => {
       this.socket.emit('authenticate', { token: localStorage['token'] });
               })
               this.onJoin();
-              this.onLeave()
+              this.onLeave();
     }
 
     select(chat: Chat) {
@@ -46,10 +48,16 @@ export class ChatListComponent implements OnInit, OnDestroy {
       .getSearchValue()
       .subscribe(value => this.searchValue = value);
      }
+    
 
   public ngOnDestroy(){
     this.subscription.unsubscribe();
   }
+
+  updateAddr(loc){
+              this.socket.emit('join', loc);
+              console.log(loc);
+            }
 
   private onSearchValueChange(value: string): void{
       this.chatService.setSearchValue(value);
@@ -60,9 +68,23 @@ export class ChatListComponent implements OnInit, OnDestroy {
                      users => {this.chats = users},
                      error =>  console.log(error));
   }
+
+  getLocation(){
+        navigator.geolocation.getCurrentPosition(position => {(
+        this.latitude = position.coords.latitude, 
+        this.longitude = position.coords.longitude
+        ), this.chatService.displayLocation(this.latitude, this.longitude).subscribe(
+                     loc => {
+                        this.updateAddr((
+                       loc.results[0].address_components[3].short_name
+                     ))},
+                     error =>  console.log(error));
+      });
+  }
    onJoin(){
     this.socket.on('join', (user) => {
         this.getAllUsers();
+        this.getLocation();
     });
   }
 
@@ -71,4 +93,5 @@ export class ChatListComponent implements OnInit, OnDestroy {
       this.getAllUsers();
     });
   }
+  
 }
