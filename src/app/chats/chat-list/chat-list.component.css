@@ -13,6 +13,7 @@ ul {
     background-color: #6a6cb5;
     overflow-x: hidden;
     overflow-y: scroll;
+    transition: width 0.3s;
 }
 
 ::-webkit-scrollbar {
@@ -31,14 +32,24 @@ ul {
 
 .change-width {
     width: 200px;
+    transition: width 0.3s;
 }
 
 .change-width form {
-    display: none;
+    width: 0;
+    padding: 0;
+    transition: width 0.3s;
+}
+
+.change-width input[type="search"] {
+    width: 0;
+    padding: 0;
+    transition: width 0.3s;
 }
 
 .change-width .user-content__status {
     width: 80px;
+    transition: width 0.3s;
 }
 
 .change-width .user-content__status p {
@@ -51,6 +62,8 @@ ul {
     align-self: center;
     background-position: -5px, 1px;
     background-image: url(assets/img/defaultAvatarlettle.png);
+    transition: width 0.3s;
+    transition: height 0.3s;
 }
 
 .chat-users-panel {
@@ -85,6 +98,7 @@ li {
 .change-width .left-nav__input {
     transform: rotate(225deg);
     left: 0;
+    transition: transform 0.3s;
 }
 
 .left-nav__input {
@@ -111,6 +125,15 @@ li {
     visibility: hidden;
 }
 
+form {
+    width: 200px;
+    transition: width 0.3s;
+}
+
+.change-width form {
+    transition: width 0.3s;
+}
+
 .left-nav__menu {
     height: 35px;
     margin-left: 2%;
@@ -135,30 +158,13 @@ li {
 input[type="search"] {
     background-color: #eef4f5;
     border: none;
-    border-bottom-left-radius: 16px;
-    border-top-left-radius: 16px;
+    border-radius: 16px;
     float: left;
     height: 31px;
     outline: none;
     padding: 5px;
-}
-
-.left-nav__serch {
-    min-width: 208px;
-}
-
-input[type="button"] {
-    background-color: #eef4f5;
-    background-position: -1px 2px;
-    background-repeat: no-repeat;
-    border: none;
-    border-bottom-right-radius: 16px;
-    border-top-right-radius: 16px;
-    float: left;
-    height: 31px;
-    outline: none;
-    padding: 5px;
-    width: 28px;
+    width: 200px;
+    transition: width 0.3s;
 }
 
 .user-content:hover {
@@ -171,6 +177,8 @@ input[type="button"] {
     border-radius: 50%;
     background-image: url(assets/img/defaultAvatar.png);
     background-position-x: -10px;
+    transition: width 0.3s;
+    transition: height 0.3s;
 }
 
 .user-content__status {

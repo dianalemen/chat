@@ -5,9 +5,9 @@
             <div class="left-nav__button" (click)="isClassVisible = !isClassVisible;">
                 <input type="checkbox" class="left-nav__input" [ngClass]="{'change-width': isClassVisible }">
             </div>
-            <form>
+            <form class="slow">
                 <input type="search" name="serch" [(ngModel)]="searchValue " (ngModelChange)="onSearchValueChange($event) " id="searchInput ">
-                <input type="button">
+
             </form>
             <div class="left-nav__menu ">
                 <button>
@@ -21,7 +21,7 @@
     <ul>
 
         <li class="user-content " *ngFor="let chat of chats | chatPipe: searchValue" (click)="select({id: chat.id}) " change-color>
-            <div class="user-content__image ">
+            <div class="user-content__image" [ngClass]="{'change-width': isClassVisible }">
             </div>
             <div class="user-content__status" [ngClass]="{'change-width': isClassVisible }">
                 <p>{{chat.username}}</p>
