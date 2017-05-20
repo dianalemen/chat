@@ -14,7 +14,6 @@ import * as io from 'socket.io-client';
 
 export class ChatListComponent implements OnInit, OnDestroy {
   isClassVisible: false;
-  status: string = "offline";
   chats;
   socket;
 

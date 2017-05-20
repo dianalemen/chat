@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 
 import { UserService } from '../../shared/user.servise';
 
@@ -11,16 +11,22 @@ import { UserService } from '../../shared/user.servise';
     styleUrls: ['./nav.component.css']
 })
  
-export class NavComponent implements OnInit{
+export class NavComponent implements OnInit, OnDestroy{
 
     isConnected;
+    private subscription: Subscription;
 
-    private username: BehaviorSubject<any> = new BehaviorSubject('');
+    private username = Observable.create(observer => {
+            observer.next("");
+    });
+
     private user = {};
     constructor(private userService: UserService,
     private router: Router,
     ){if(this.isLogedIn()){
-             this.username = localStorage["user"]
+        let subscription = this.username.subscribe(username => {
+                 this.username = localStorage.getItem("user");
+        })
         }
         
     this.isConnected = Observable.merge(
@@ -29,8 +35,12 @@ export class NavComponent implements OnInit{
       Observable.fromEvent(window, 'offline').map(() => false));}
 
     ngOnInit(){
-      
+        
     }
+    
+    public ngOnDestroy(){
+    this.subscription.unsubscribe(); 
+  }
 
     private isLogedIn(){
     return this.userService.authenticated();
