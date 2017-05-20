@@ -23,7 +23,8 @@ export class NavComponent implements OnInit, OnDestroy{
     ){
         if(this.isLogedIn()){
             userService.getUserState().subscribe( 
-                user => this.username = user );
+                user => {this.username = user, console.log(user)} )
+                this.username = localStorage['user'];
         }
         
     this.isConnected = Observable.merge(

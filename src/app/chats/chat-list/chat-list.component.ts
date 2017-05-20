@@ -65,7 +65,9 @@ export class ChatListComponent implements OnInit, OnDestroy {
 
   getAllUsers(){
     this.chatService.getAll().subscribe(
-                     users => {this.chats = users},
+                     users => {this.chats = users.filter(
+                       user => (user.username !== localStorage['user'])
+                       )},
                      error =>  console.log(error));
   }
 
@@ -77,7 +79,7 @@ export class ChatListComponent implements OnInit, OnDestroy {
                      loc => {
                         this.updateAddr((
                        loc.results[0].address_components[3].short_name
-                     ))},
+                     )),console.log(loc.results[0].address_components[3].short_name)},
                      error =>  console.log(error));
       });
   }

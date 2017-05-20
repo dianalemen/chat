@@ -9,17 +9,15 @@ import { AuthService } from '../core/auth.service';
 @Injectable()
 export class UserService{
     private _authenticated: boolean = false;
-    private _state: BehaviorSubject<any> = new BehaviorSubject<any>({});
+    private _state = new BehaviorSubject('');
     
     public setUserState(state){
-        this._state.next('');
+        this._state.next(state.user);
         localStorage.setItem('token', state.token);
         localStorage.setItem('user', state.user);
-        this._state.next(state.user);
     }
 
-    public getUserState(): BehaviorSubject<any>{
-       console.log(this._state);
+    public getUserState(){
        return this._state;
     }
     public authenticated(): boolean{
