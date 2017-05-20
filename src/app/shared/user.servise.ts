@@ -11,14 +11,15 @@ export class UserService{
     private _authenticated: boolean = false;
     private _state: BehaviorSubject<any> = new BehaviorSubject<any>({});
     
-    public setUserState(state): void{
-        //console.log("state", state);
+    public setUserState(state){
+        this._state.next('');
         localStorage.setItem('token', state.token);
         localStorage.setItem('user', state.user);
         this._state.next(state.user);
     }
 
     public getUserState(): BehaviorSubject<any>{
+       console.log(this._state);
        return this._state;
     }
     public authenticated(): boolean{
@@ -40,7 +41,7 @@ export class UserService{
     
     public logout(): void{
         localStorage.clear();
-        console.log('user logout');
+        //console.log('user logout');
     }
 
 }

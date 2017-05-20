@@ -14,19 +14,16 @@ import { UserService } from '../../shared/user.servise';
 export class NavComponent implements OnInit, OnDestroy{
 
     isConnected;
+    username;
     private subscription: Subscription;
-
-    private username = Observable.create(observer => {
-            observer.next("");
-    });
-
+    
     private user = {};
     constructor(private userService: UserService,
     private router: Router,
-    ){if(this.isLogedIn()){
-        let subscription = this.username.subscribe(username => {
-                 this.username = localStorage.getItem("user");
-        })
+    ){
+        if(this.isLogedIn()){
+            userService.getUserState().subscribe( 
+                user => this.username = user );
         }
         
     this.isConnected = Observable.merge(
