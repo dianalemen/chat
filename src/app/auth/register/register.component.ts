@@ -14,8 +14,8 @@ import { Router } from '@angular/router';
 export  class RegisterComponent implements OnInit{
     user: FormGroup;
 
-    //private signUpUrl = 'https://safe-everglades-93622.herokuapp.com/registration';
-    private signUpUrl = 'http://localhost:3000/registration';
+    private signUpUrl = 'https://safe-everglades-93622.herokuapp.com/registration';
+    //private signUpUrl = 'http://localhost:3000/registration';
     
     constructor( private fb: FormBuilder,
                  private http: Http,
