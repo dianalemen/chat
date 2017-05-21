@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewChecked, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { MessageService } from '../message.service';
 import { UserService } from '../../../shared/user.servise';
@@ -21,6 +21,7 @@ export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked
   messages;
   user: string;
 
+@ViewChild('audio') audio: any;
 
   private searchValue: string ="";
   private subscription: Subscription;
@@ -72,7 +73,8 @@ export class MessageListComponent implements OnInit, OnDestroy, AfterViewChecked
   onMessages(){
    this.socket.on('message', (msg) => {
                (this.messages.push(msg));
-               console.log(this.user)
+               let audio = this.audio.nativeElement;
+                          audio.play();
                 })
   }
  

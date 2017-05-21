@@ -98,6 +98,10 @@ button {
     background-color: #eef4f5;
 }
 
+audio {
+    display: none;
+}
+
 .chat-content__text {
     align-content: flex-start;
     border-radius: 10px;
