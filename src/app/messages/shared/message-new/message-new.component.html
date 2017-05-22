@@ -1,6 +1,6 @@
 <section class="chat-input ">
     <form class="chat-input__msg " #form="ngForm" (ngSubmit)="greate(form.value, $event); test.value = ' '">
-        <span class="sub-inf" *ngIf="this.typingUsers.length > 0"> {{typingUsers}} is typing....</span>
+        <span *ngIf="this.typingUsers.length > 0"> {{typingUsers}} is typing....</span>
         <textarea name="text" [(ngModel)]="text" autofocus #test (keyup)="onChange($event)"></textarea>
         <button type="submit"><i class="fa fa-paper-plane fa-4x"></i></button>
         <div></div>
