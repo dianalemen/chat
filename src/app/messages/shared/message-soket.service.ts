@@ -1,4 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import * as io from 'socket.io-client';
 
 @Injectable()
@@ -16,5 +17,28 @@ constructor(){
             joinGroup(text){
               this.socket.emit('message', text);
             }
+            isTyping() {
+        this.socket.emit('is typing')
+    }
+
+    stopTyping() {
+        this.socket.emit('stop typing')
+    }
+
+    typing() {
+        let observable = new Observable(observer => {
+            this.socket.on('typing', user => observer.next(user.username))
+        })
+        return observable
+    }
+
+    notTyping(){
+        let observable = new Observable(observer => {
+            this.socket.on('stop typing', user => {
+                observer.next(user.username)
+            })
+        })
+        return observable
+    }
 
 }
