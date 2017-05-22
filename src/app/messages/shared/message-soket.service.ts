@@ -14,10 +14,11 @@ constructor(){
               });
             }
 
-            joinGroup(text){
+    joinGroup(text){
               this.socket.emit('message', text);
-            }
-            isTyping() {
+    }
+            
+    isTyping() {
         this.socket.emit('is typing')
     }
 

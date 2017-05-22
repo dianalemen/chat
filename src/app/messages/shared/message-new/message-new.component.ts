@@ -14,7 +14,6 @@ socket;
 
 private isTyping: boolean = false;
 typingUsers = [];
-showMsg: boolean = false;
 
   constructor(
     private socketService: MessageSocketService
@@ -24,44 +23,43 @@ showMsg: boolean = false;
 this.socketService.typing()
       .subscribe(user => {
         this.typingUsers.push(user)
-        console.log(this.typingUsers)
+        console.log('typing',this.typingUsers)
       })
 
     this.socketService.notTyping()
       .subscribe(user => {
         let i = this.typingUsers.indexOf(user);
         this.typingUsers.splice(i, 1);
-        console.log(this.typingUsers)
+        console.log('nottyping',this.typingUsers)
       })
-
-      this.typingUsers.length > 0 ? this.showMsg = true : this.showMsg = false
 
   }
 
     greate(inputText, e){
       this.onClick(e);
       let text;
-     if(inputText.text == ''){
-         alert("type your message")
-        } else {
           text = inputText.text;
           this.joinGroup(text);
-        }
+          this.socketService.stopTyping();
+          this.isTyping = false;
     }
+
     joinGroup(text){
       this.socketService.joinGroup(text);
     }
+
     onClick(e){
-      console.log(e);
       e.preventDefault();
     }
 
     onChange(event) {
     if (event.target.value.length > 0 && !this.isTyping) {
+      console.log('etvl', event.target.value.length)
       this.socketService.isTyping()
       this.isTyping = true;
     }
     else if (event.target.value.length === 0 && this.isTyping) {
+      console.log('etvl1', event.target.value.length)
       this.socketService.stopTyping()
       this.isTyping = false;
     }
