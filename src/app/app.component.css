@@ -10,6 +10,24 @@ h1 {
     padding-top: 20px;
 }
 
+.home {
+    border: 5px solid #d7d8f1;
+    min-height: 520px;
+    width: 1356px;
+}
+
+@media screen and (max-width: 1000px) and (min-width: 700px) {
+    .home {
+        width: 729px;
+    }
+}
+
+@media screen and (max-width: 699px) and (min-width: 520px) {
+    .home {
+        width: 729px;
+    }
+}
+
 body {
     margin: 0;
 }

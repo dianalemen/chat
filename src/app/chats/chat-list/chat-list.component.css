@@ -234,7 +234,7 @@ input[type="search"] {
     height: 80px;
     border-radius: 50%;
     background-image: url(assets/img/defaultAvatar.png);
-    background-position-x: -10px;
+    background-position: -10px, 0;
     transition: width 0.3s;
     transition: height 0.3s;
 }
