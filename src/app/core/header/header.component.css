@@ -18,6 +18,12 @@ nav {
     }
 }
 
+@media screen and (max-width: 699px) and (min-width: 520px) {
+    nav {
+        width: 700px;
+    }
+}
+
 a {
     text-decoration: none;
     color: white;
