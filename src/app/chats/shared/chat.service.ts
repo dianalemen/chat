@@ -24,7 +24,7 @@ users;
 
     displayLocation(Latitude, Longitude) {
         return this.http
-            .get('http://maps.googleapis.com/maps/api/geocode/json?latlng='+
+            .get('https://maps.googleapis.com/maps/api/geocode/json?latlng='+
             Latitude+','+
             Longitude+'&sensor=true')
             .map(this.extractData);
