@@ -12,7 +12,7 @@ i = 0;
   if (this.i % 2) {
     this.highlight('');
         } else {
-    this.highlight('#990E79');
+    this.highlight('#3c3f9a');
         }
     this.i++;
 }

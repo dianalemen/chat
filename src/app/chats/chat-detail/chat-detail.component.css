@@ -1,5 +1,6 @@
 .chat-detail {
     flex-grow: 1;
+    border-left: 5px solid #d7d8f1;
 }
 
 ul {

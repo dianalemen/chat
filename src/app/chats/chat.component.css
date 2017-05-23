@@ -1,9 +1,15 @@
-.chats-page {
-    border-top: solid 1px white;
-    display: flex;
-    width: 100%;
-}
-
-h1 {
-    margin: 0;
-}
+ .chats-page {
+     border: solid 6px #d7d8f1;
+     display: flex;
+     width: 1354px;
+ }
+ 
+ @media screen and (max-width: 1000px) and (min-width: 700px) {
+     .chats-page {
+         width: 727px;
+     }
+ }
+ 
+ h1 {
+     margin: 0;
+ }

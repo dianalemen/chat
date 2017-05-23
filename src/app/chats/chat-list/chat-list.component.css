@@ -7,13 +7,45 @@ ul {
 }
 
 .chat-left-side {
-    height: 532px;
+    height: 518px;
     width: 405px;
     float: left;
-    background-color: #6a6cb5;
+    background-color: #3b3e99;
     overflow-x: hidden;
     overflow-y: scroll;
     transition: width 0.3s;
+}
+
+@media screen and (max-width: 1000px) and (min-width: 700px) {
+    .user-content__time {
+        display: none;
+    }
+    form {
+        display: none;
+    }
+    input[type="search"] {
+        width: 0;
+        padding: 0;
+    }
+    .user-content__status {
+        width: 80px;
+        transition: width 0.3s;
+    }
+    .user-content__status p {
+        text-align: center;
+    }
+    .user-content__image {
+        width: 40px;
+        height: 40px;
+        align-self: center;
+        background-position: -5px, 1px;
+        background-image: url(assets/img/defaultAvatarlettle.png);
+        transition: width 0.3s;
+        transition: height 0.3s;
+    }
+    .chat-left-side {
+        width: 200px;
+    }
 }
 
 ::-webkit-scrollbar {
@@ -134,6 +166,10 @@ form {
     transition: width 0.3s;
 }
 
+.change-width .user-content__time {
+    display: none;
+}
+
 .left-nav__menu {
     height: 35px;
     margin-left: 2%;
@@ -156,7 +192,7 @@ form {
 }
 
 input[type="search"] {
-    background-color: #eef4f5;
+    background-color: #ededfa;
     border: none;
     border-radius: 16px;
     float: left;
@@ -187,6 +223,10 @@ input[type="search"] {
 
 .user-content__status p {
     text-overflow: ellipsis;
+    color: #898bc2;
+}
+
+#username {
     color: #fff;
 }
 
@@ -195,7 +235,7 @@ input[type="search"] {
     margin-top: 30px;
     border-radius: 10px;
     text-align: center;
-    background-color: #744d92;
+    background-color: #6a6cb5;
     color: #fff;
 }
 

@@ -7,6 +7,15 @@ nav {
     justify-content: space-between;
     padding-left: 16px;
     padding-right: 13px;
+    border: 5px solid #d7d8f1;
+    border-bottom: none;
+    width: 1327px;
+}
+
+@media screen and (max-width: 1000px) and (min-width: 700px) {
+    nav {
+        width: 700px;
+    }
 }
 
 a {

@@ -24,10 +24,10 @@
             <div class="user-content__image" [ngClass]="{'change-width': isClassVisible }">
             </div>
             <div class="user-content__status" [ngClass]="{'change-width': isClassVisible }">
-                <p>{{chat.username}}</p>
+                <p id="username">{{chat.username}}</p>
                 <p>{{chat.status}}, {{chat.addr}}</p>
             </div>
-            <div class="user-content__time ">
+            <div class="user-content__time " [ngClass]="{'change-width': isClassVisible }">
                 <p class="time ">{{ value | time }} h </p>
             </div>
         </li>

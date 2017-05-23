@@ -13,19 +13,30 @@ ul {
 }
 
 .username {
-    color: #bfdfe4;
+    color: #cdcdf6;
 }
 
-.any {}
+.any {
+    margin-left: 10px;
+}
+
+.any p {
+    padding-left: 10px;
+}
+
+.any span {
+    padding-left: 10px;
+}
 
 .change-pos {
     flex-direction: row-reverse;
+    margin-right: 10px;
 }
 
 .chat-right-side {
     display: flex;
     flex-direction: column;
-    height: 467px;
+    height: 440px;
 }
 
 .chat-content__info {
@@ -91,11 +102,11 @@ button {
 }
 
 .chat-content__time p {
-    color: #bfdfe4;
+    color: #cdcdf6;
 }
 
 .chat-content__container .chat-content__text {
-    background-color: #eef4f5;
+    background-color: #f1f1fb;
 }
 
 audio {
@@ -110,6 +121,7 @@ audio {
 }
 
 .chat-content__text p {
+    color: #474749;
     padding-left: 5px;
     margin-left: 5px;
     margin-right: 5px;

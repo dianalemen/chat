@@ -27,4 +27,6 @@ body {
 ct-chat-detail,
 ct-chat-holder {
     display: flex;
-    width: 70%; flex-grow: 1;}
+    width: 66%;
+    flex-grow: 1;
+}

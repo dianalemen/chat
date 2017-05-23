@@ -11,7 +11,7 @@ i = 0;
   if (this.i % 2) {
     this.changecolor('');
         } else {
-    this.changecolor('#D02090');
+    this.changecolor('#f23f79');
         }
     this.i++;
 }
