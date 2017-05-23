@@ -31,9 +31,6 @@ ul {
         width: 80px;
         transition: width 0.3s;
     }
-    .user-content__status p {
-        text-align: center;
-    }
     .user-content__image {
         width: 40px;
         height: 40px;
@@ -82,10 +79,6 @@ ul {
 .change-width .user-content__status {
     width: 80px;
     transition: width 0.3s;
-}
-
-.change-width .user-content__status p {
-    text-align: center;
 }
 
 .change-width .user-content__image {
