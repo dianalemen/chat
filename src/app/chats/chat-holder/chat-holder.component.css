@@ -3,6 +3,18 @@
     line-height: 514px;
 }
 
+@media screen and (max-width: 1000px) and (min-width: 700px) {
+    .chat-holder h1 {
+        height: 462px;
+    }
+}
+
+@media screen and (max-width: 699px) and (min-width: 520px) {
+    .chat-holder h1 {
+        height: 462px;
+    }
+}
+
 h1 {
     padding-left: 10px;
 }

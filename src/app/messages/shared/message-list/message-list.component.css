@@ -39,6 +39,18 @@ ul {
     height: 440px;
 }
 
+@media screen and (max-width: 1000px) and (min-width: 700px) {
+    .chat-right-side {
+        height: 393px;
+    }
+}
+
+@media screen and (max-width: 699px) and (min-width: 520px) {
+    .chat-right-side {
+        height: 393px;
+    }
+}
+
 .chat-content__info {
     display: flex;
     justify-content: space-between;

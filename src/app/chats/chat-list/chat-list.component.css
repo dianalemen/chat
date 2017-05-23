@@ -17,6 +17,9 @@ ul {
 }
 
 @media screen and (max-width: 699px) and (min-width: 520px) {
+    .chat-left-side {
+        height: 459px;
+    }
     .user-content__time {
         display: none;
     }
@@ -37,8 +40,6 @@ ul {
         align-self: center;
         background-position: -5px, 1px;
         background-image: url(assets/img/defaultAvatarlettle.png);
-        transition: width 0.3s;
-        transition: height 0.3s;
     }
     .chat-left-side {
         width: 200px;
@@ -46,6 +47,9 @@ ul {
 }
 
 @media screen and (max-width: 1000px) and (min-width: 700px) {
+    .chat-left-side {
+        height: 459px;
+    }
     .user-content__time {
         display: none;
     }
@@ -58,7 +62,6 @@ ul {
     }
     .user-content__status {
         width: 80px;
-        transition: width 0.3s;
     }
     .user-content__image {
         width: 40px;
@@ -66,8 +69,6 @@ ul {
         align-self: center;
         background-position: -5px, 1px;
         background-image: url(assets/img/defaultAvatarlettle.png);
-        transition: width 0.3s;
-        transition: height 0.3s;
     }
     .chat-left-side {
         width: 200px;
