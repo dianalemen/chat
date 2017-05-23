@@ -16,36 +16,6 @@ ul {
     transition: width 0.3s;
 }
 
-@media screen and (max-width: 699px) and (min-width: 520px) {
-    .chat-left-side {
-        height: 459px;
-    }
-    .user-content__time {
-        display: none;
-    }
-    form {
-        display: none;
-    }
-    input[type="search"] {
-        width: 0;
-        padding: 0;
-    }
-    .user-content__status {
-        width: 80px;
-        transition: width 0.3s;
-    }
-    .user-content__image {
-        width: 40px;
-        height: 40px;
-        align-self: center;
-        background-position: -5px, 1px;
-        background-image: url(assets/img/defaultAvatarlettle.png);
-    }
-    .chat-left-side {
-        width: 200px;
-    }
-}
-
 @media screen and (max-width: 1000px) and (min-width: 700px) {
     .chat-left-side {
         height: 459px;
@@ -266,4 +236,34 @@ button {
     background-color: transparent;
     border: none;
     outline: none;
+}
+
+@media screen and (max-width: 699px) and (min-width: 520px) {
+    .chat-left-side {
+        height: 459px;
+    }
+    .user-content__time {
+        display: none;
+    }
+    form {
+        display: none;
+    }
+    input[type="search"] {
+        width: 0;
+        padding: 0;
+    }
+    .user-content__status {
+        width: 80px;
+        transition: width 0.3s;
+    }
+    .user-content__image {
+        width: 40px;
+        height: 40px;
+        align-self: center;
+        background-position: -5px, 1px;
+        background-image: url(assets/img/defaultAvatarlettle.png);
+    }
+    .chat-left-side {
+        width: 200px;
+    }
 }
