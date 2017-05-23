@@ -1,7 +1,19 @@
 section {
-    border-top: 1px solid white;
-    min-height: 557px;
-    width: 100%;
+    border: 5px solid #d7d8f1;
+    min-height: 520px;
+    width: 1356px;
+}
+
+@media screen and (max-width: 1000px) and (min-width: 700px) {
+    section {
+        width: 729px;
+    }
+}
+
+@media screen and (max-width: 699px) and (min-width: 520px) {
+    section {
+        width: 729px;
+    }
 }
 
 .tab>label {
