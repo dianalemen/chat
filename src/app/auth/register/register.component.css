@@ -16,6 +16,12 @@ section {
     }
 }
 
+@media screen and (max-width: 520px) {
+    section {
+        width: 100%;
+    }
+}
+
 .tab>label {
     display: inline-block;
     left: 1px;

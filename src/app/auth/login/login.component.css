@@ -16,6 +16,12 @@ section {
     }
 }
 
+@media screen and (max-width: 520px) {
+    section {
+        width: 100%;
+    }
+}
+
 .tab>label {
     display: inline-block;
     left: 1px;
@@ -64,8 +70,9 @@ button {
     border-radius: 6px;
     margin-left: 12.5%;
     outline: none;
-    position: absolute;
     padding: 5px;
+    position: absolute;
+    width: 57px;
 }
 
 .social {
@@ -73,7 +80,8 @@ button {
 }
 
 #google-login-btn {
-    margin-left: 10%;
+    margin-left: 9%;
+    width: 141px;
 }
 
 .social p {

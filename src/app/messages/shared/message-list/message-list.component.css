@@ -55,6 +55,16 @@ ul {
     }
 }
 
+@media screen and (max-width: 520px) {
+    .chat-right-side {
+        width: 336px;
+        height: 393px;
+    }
+    .user-content__image {
+        display: none;
+    }
+}
+
 .chat-content__info {
     display: flex;
     justify-content: space-between;

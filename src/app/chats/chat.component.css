@@ -18,6 +18,13 @@
      }
  }
  
+ @media screen and (max-width: 520px) {
+     .chats-page {
+         width: 541px;
+         height: 457px;
+     }
+ }
+ 
  h1 {
      margin: 0;
  }
