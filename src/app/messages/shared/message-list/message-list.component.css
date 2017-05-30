@@ -47,7 +47,11 @@ ul {
 
 @media screen and (max-width: 699px) and (min-width: 520px) {
     .chat-right-side {
+        width: 336px;
         height: 393px;
+    }
+    .user-content__image {
+        display: none;
     }
 }
 

@@ -21,6 +21,7 @@
     border-right: none;
     border-left: none;
     border-top: solid 1px #eef4f5;
+    display: flex;
     padding-left: 10%;
 }
 
@@ -42,10 +43,15 @@ button {
     background-color: transparent;
     border: none;
     outline: none;
+    height: 74px;
 }
 
 .fa {
-    width: 50px;
-    height: 50px;
     color: #ededfa;
+}
+
+@media screen and (max-width: 699px) and (min-width: 520px) {
+    .chat-input__msg textarea {
+        width: auto;
+    }
 }
