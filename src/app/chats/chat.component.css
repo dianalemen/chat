@@ -1,26 +1,26 @@
  .chats-page {
      border: solid 6px #d7d8f1;
      display: flex;
-     width: 1354px;
+     width: calc(100%-10px);
  }
  
  @media screen and (max-width: 1000px) and (min-width: 700px) {
      .chats-page {
-         width: 727px;
+         width: calc(100%-10px);
          height: 457px;
      }
  }
  
  @media screen and (max-width: 699px) and (min-width: 520px) {
      .chats-page {
-         width: 541px;
+         width: calc(100%-10px);
          height: 457px;
      }
  }
  
  @media screen and (max-width: 520px) {
      .chats-page {
-         width: 541px;
+         width: calc(100%-10px);
          height: 457px;
      }
  }

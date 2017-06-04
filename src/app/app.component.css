@@ -13,18 +13,24 @@ h1 {
 .home {
     border: 5px solid #d7d8f1;
     min-height: 520px;
-    width: 100%;
+    width: calc(100%-10px);
 }
 
 @media screen and (max-width: 1000px) and (min-width: 700px) {
     .home {
-        width: 100%;
+        width: calc(100%-10px);
     }
 }
 
 @media screen and (max-width: 699px) and (min-width: 520px) {
     .home {
-        width: 543px;
+        width: calc(100%-10px);
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .home {
+        width: calc(100%-10px);
     }
 }
 
